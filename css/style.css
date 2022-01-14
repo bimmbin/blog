@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    box-sizing: border-box;
+  }
+  .container {
+    width: 1180px;
+    margin: auto;
+  }
+  
+  /* header ---------------------*/
+  .head {
+    background: #51A8EB;
+  }
+  header {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #51A8EB;
+  }
+  header ul {
+    display: flex;
+    list-style-type: none;
+  }
+  header ul li {
+    margin-left: 30px;
+  }
+  header ul li a{
+    text-decoration: none;
+    color: black;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* articlePage ---------------------*/
+  
+  
+  .blogShowcase {
+    display: flex;
+    margin-top: 3rem;
+  }
+  .showcaseDetails {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  .showcaseDetails p:nth-child(1) {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #373737;
+  }
+  .showcaseDetails p:nth-child(2) {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+  }
+  .showcaseDetails p:nth-child(3) {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #373737;
+  }
+  
+  
+  
+  /* cardwrapped ---------------------*/
+  
+  .wrapper {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 380px;
+    
+  }
+  .card {
+    background: rgb(255, 255, 255);
+    width: 360px;
+    height: 380px;
+    margin-bottom: 3rem;
+    border-radius: 5px;
+    box-shadow: 0 1px 20px 0 rgb(0 0 0 / 10%);
+    display: flex;
+    flex-flow: column;
+  }
+  
+  .card .imgLink {
+    height: 55%;
+  }
+  .titleLink:hover, .authorLink:hover, .showcaseLink:hover {
+    color: #51A8EB;
+  }
+  .authorLink {
+    font-weight: 600;
+  }
+  
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+  }
+  .card .blogDetails {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  .card .blogDetails .blogTitle{
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  .dAndTime {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #575757;
+  }
+  
+  
+
+   /* LoginPage ---------------------*/
+  
+
+   .loginPage {
+       width: 100%;
+       height: 80vh;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   }
+   .loginForm {
+       display: flex;
+       flex-flow: column;
+       width: 400px;
+       height: 400px;
+       background: #51A8EB;
+       padding: 20px 30px;
+       justify-content: space-around;
+       border-radius: 10px;
+   }
+   .loginForm h2 {
+       text-align: center;
+       font-size: 28px;
+       font-weight: 500;
+   }
+   .loginForm .textarea {
+       height: 50px;
+       padding: 10px;
+       font-size: 15px;
+   }
+   .loginForm .loginBtn {
+       font-size: 18px;
+       padding: 10px;
+       height: 50px;
+   }
