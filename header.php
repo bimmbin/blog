@@ -29,7 +29,6 @@
                     <li><a href="#">Articles</a></li>
                     <li><a href="#">Contact</a></li>
                     <?php 
-                
                         if (isset($_SESSION['usersid'])) {
                             echo "<li><a href='dashboard.php'>Dashboard</a></li>";
                             echo "<li><a href='includes/logout.inc.php'>Log out</a></li>";
