@@ -135,6 +135,21 @@ select {
     width: 75vw;
     height: 20vh;
 }
+.bolded{
+    font-size: 1.3vw;
+    font-weight: 600;
+}
+.notBetween img, #belowPlus{
+    height: 5vh;
+    width: 3.5vw;
+    margin-left: 1.5rem;
+    cursor: pointer;
+}
+.notBetween {
+    justify-content: flex-start!important;
+    align-items: center;
+    padding: 3vh 0;
+}
 
 .productsBelow {
     display: flex;
@@ -146,6 +161,36 @@ select {
     border-width: 0 0 1px 0;
     padding: 3vh 2.5vw;
 }
-.productsBelow textarea{
+.productsBelow textarea, .sub textarea {
     height: 8vh;
+    width: 20vw;
+}
+.productsBelow h3{
+    font-size: 1.2vw;
+}
+ input[type=file] {
+    font-size: 1.2vw;
+    padding: 0.5vh 0.5vw;
+}
+
+.submitBtn {
+    display: flex;
+    justify-content: flex-end;
+    padding: 3vh 2.5vw;
+    margin: 2rem 0;
+}
+input[type=submit] {
+    font-size: 1.5vw;
+    padding: 1vh 1vw;
+    border-radius: 0.5vw;
+    border: 1px solid  #003761;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background: #0062ad;
+    color: white;
+}
+
+.non {
+    display: none;
 }

@@ -99,6 +99,15 @@ function emptyInputLogin($username, $pwd) {
     }
     return $result;
 }
+function emptyInputDash($username, $pwd) {
+    $result;
+    if (empty($username) || empty($pwd)) {
+        $result = true;
+    } else {
+        $result = false;
+    }
+    return $result;
+}
 
 function loginUser($conn, $username, $pwd) {
     $uidExists = uidExists($conn, $username, $username);
@@ -119,7 +128,45 @@ function loginUser($conn, $username, $pwd) {
         session_start();
         $_SESSION['usersid'] = $uidExists['usersId'];
         $_SESSION['usersuname'] = $uidExists['usersUname']; 
+        $_SESSION['usersname'] = $uidExists['usersName']; 
         header("location: ../index.php");
         exit();
     }
+}
+
+function emptyInputSub($headline1,$pheadline1) {
+    $result;
+    if (empty($headline1) || empty($pheadline1)) {
+        $result = true;
+    } else {
+        $result = false;
+    }
+    return $result;
+}
+function emptyInputPro($productname1, $producturl1) {
+    $result;
+    if (empty($productname1) || empty($producturl1)) {
+        $result = true;
+    } else {
+        $result = false;
+    }
+    return $result;
+}
+
+                
+
+function e($string)
+{
+    global $conn;
+    return mysqli_real_escape_string($conn, $string);
+}
+function h($num)
+{
+    $head = "$headline" . $num;
+    return $head;
+}
+function ol($string)
+{
+    
+    return headline($string);
 }
