@@ -1,11 +1,13 @@
 <?php
         include "header.php";
         include "includes/db.inc.php";
+        include "includes/functions.inc.php";
 
-        $sqlArt = "SELECT imgstatus,headline,author,firstp,  DATE_FORMAT(date , '%M %e, %Y') date  FROM article";
+        $sqlArt = "SELECT id,imgstatus,headline,author,firstp,  DATE_FORMAT(date , '%M %e, %Y') date  FROM article";
         $resultArt = mysqli_query($conn, $sqlArt);
 
         $articles = mysqli_fetch_all($resultArt, MYSQLI_ASSOC);
+        
 
 ?>
 
@@ -23,7 +25,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et</p>
             </div>
-        </div>
+        </div>  
     </a>
 </div>
             <!-- CardWrapped -->
@@ -32,13 +34,16 @@
         <div class="flex-container">
 
             <?php foreach($articles as $article) {?>
-
+                <?php 
+                $imgId = $article['id'];
+                $imglink = fetch('imglinks', 'articleId', $imgId);
+                ?>
                 <div class="card">
                     <a href="" class="imgLink">
-                        <img src="img/rec.png" alt="">
+                        <img src="uploads/<?php echo $imglink['headline']; ?>" alt="">
                     </a>
                     <div class="blogDetails">
-                        <a href="" class="titleLink">
+                        <a href="articles.php?headline=<?php echo $article['headline']; ?>" class="titleLink">
                             <p class="blogTitle"><?php echo $article['headline']; ?></p>
                         </a>
                         <div class="dAndTime">

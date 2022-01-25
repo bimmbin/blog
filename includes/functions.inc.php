@@ -160,13 +160,52 @@ function e($string)
     global $conn;
     return mysqli_real_escape_string($conn, $string);
 }
-function h($num)
-{
-    $head = "$headline" . $num;
-    return $head;
-}
-function ol($string)
-{
+
+function fileName($filename, $artId) {
+
+    include 'db.inc.php';
     
-    return headline($string);
+    $file = $_FILES[$filename];
+
+    $fileName = $file['name'];
+    $fileTmpName = $file['tmp_name'];
+
+    $fileExt = explode('.', $fileName);
+    $fileActualExt = strtolower(end($fileExt));
+
+
+  
+    $fileNameNew = $artId.$filename.".".$fileActualExt;
+    $fileDestination = '../uploads/'.$fileNameNew;
+
+
+    if (move_uploaded_file($fileTmpName, $fileDestination)) {
+        return $fileNameNew;
+    }
+}
+
+function imglinks($artId){
+    global $conn;
+  $headline = fileName('fileheadline', $artId); 
+  $subhead1 = fileName('filesubproduct1', $artId);
+  $subhead2 = fileName('filesubproduct2', $artId);
+  $subhead3 = fileName('filesubproduct3', $artId);
+  $subhead4 = fileName('filesubproduct4', $artId);
+  $subhead5 = fileName('filesubproduct5', $artId);
+  $subhead6 = fileName('filesubproduct6', $artId);
+  $subhead7 = fileName('filesubproduct7', $artId);
+  $subhead8 = fileName('filesubproduct8', $artId);
+    
+    $queryImg = "INSERT INTO imglinks (articleId,headline,subhead1,subhead2,subhead3,subhead4,subhead5,subhead6,subhead7,subhead8) VALUES ('$artId','$headline','$subhead1','$subhead2','$subhead3','$subhead4','$subhead5','$subhead6','$subhead7','$subhead8')";
+    mysqli_query($conn, $queryImg);
+}
+
+function fetch($tableName, $colTarget, $artId){
+    global $conn;
+    $query = "SELECT * FROM $tableName WHERE $colTarget = '$artId'";
+
+    $result = mysqli_query($conn, $query);
+
+    $resultsql = mysqli_fetch_assoc($result);
+    return $resultsql;
 }

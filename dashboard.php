@@ -13,7 +13,7 @@
 
     <section class="blogSection">
         <div class="container">
-            <form action="includes/dashboard.inc.php" method="post">
+            <form action="includes/dashboard.inc.php" method="post" enctype="multipart/form-data">
 
 <!----------------- createBlog1 ------------->
                 <div class="createBlog">
@@ -26,11 +26,15 @@
                         <div class="columnBetween">
                             <p>Category</p>
                             <select class="js-example-basic-single" name="category">
-                                <option value="gadgets">Gadgets</option>
-                                <option value="farming">Farming</option>
+                                <option value="Gadgets">Gadgets</option>
+                                <option value="Farming">Farming</option>
                             </select>
                         </div>
                     </div>
+                    <div class="columnBetween">
+                            <p>Headline Image</p>
+                            <input type="file" onchange="validateSizeHead(this)" accept=".png, .jpg, .jpeg" name="fileheadline">
+                        </div>
                 </div>
 
 
@@ -69,7 +73,7 @@
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" name="imgsubproduct1">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="filesubproduct1">
                         </div>
                     </div>
                     <div class="rowBetween notBetween">
@@ -77,7 +81,7 @@
                         <img src="img/rec.png" alt="" id="subplus1">
                     </div>
                 </div>
-
+<!----------------- s ------------->
                 <div class="subhead head2 non">
                     <div class="columnBetween titlePa">
                         <p class="bolded">Subheadline2</p>
@@ -99,7 +103,7 @@
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" name="imgsubproduct2">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="filesubproduct2">
                         </div>
                     </div>
                     <div class="rowBetween notBetween">
@@ -107,7 +111,7 @@
                         <img src="img/rec.png" alt="" id="subplus2">
                     </div>
                 </div>
-
+<!----------------- s ------------->
                 <div class="subhead head3 non">
                     <div class="columnBetween titlePa">
                         <p class="bolded">Subheadline3</p>
@@ -129,7 +133,7 @@
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" name="imgsubproduct3">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="filesubproduct3">
                         </div>
                     </div>
                     <div class="rowBetween notBetween">
@@ -137,7 +141,7 @@
                         <img src="img/rec.png" alt="" id="subplus3">
                     </div>
                 </div>
-
+<!----------------- s ------------->
                 <div class="subhead head4 non">
                     <div class="columnBetween titlePa">
                         <p class="bolded">Subheadline4</p>
@@ -159,7 +163,7 @@
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" name="imgsubproduct4">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="filesubproduct4">
                         </div>
                     </div>
                     <div class="rowBetween notBetween">
@@ -167,7 +171,7 @@
                         <img src="img/rec.png" alt="" id="subplus4">
                     </div>
                 </div>
-
+<!----------------- s ------------->
                 <div class="subhead head5 non">
                     <div class="columnBetween titlePa">
                         <p class="bolded">Subheadline5</p>
@@ -189,7 +193,7 @@
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" name="imgsubproduct5">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="filesubproduct5">
                         </div>
                     </div>
                     <div class="rowBetween notBetween">
@@ -197,7 +201,7 @@
                         <img src="img/rec.png" alt="" id="subplus5">
                     </div>
                 </div>
-
+<!----------------- s ------------->
                 <div class="subhead head6 non">
                     <div class="columnBetween titlePa">
                         <p class="bolded">Subheadline6</p>
@@ -219,7 +223,7 @@
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" name="imgsubproduct6">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="filesubproduct6">
                         </div>
                     </div>
                     <div class="rowBetween notBetween">
@@ -227,7 +231,7 @@
                         <img src="img/rec.png" alt="" id="subplus6">
                     </div>
                 </div>
-
+<!----------------- s ------------->
                 <div class="subhead head7 non">
                     <div class="columnBetween titlePa">
                         <p class="bolded">Subheadline7</p>
@@ -249,7 +253,7 @@
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" name="imgsubproduct7">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="filesubproduct7">
                         </div>
                     </div>
                     <div class="rowBetween notBetween">
@@ -257,7 +261,7 @@
                         <img src="img/rec.png" alt="" id="subplus7">
                     </div>
                 </div>
-                
+<!----------------- s ------------->
                 <div class="subhead head8 non">
                     <div class="columnBetween titlePa">
                         <p class="bolded">Subheadline8</p>
@@ -279,7 +283,7 @@
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" name="imgsubproduct8">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="filesubproduct8">
                         </div>
                     </div>
                 </div>
@@ -298,7 +302,7 @@
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" name="imgproduct1">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="imgproduct1">
                         </div>
                     </div>
 
@@ -313,7 +317,7 @@
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" name="imgproduct2">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="imgproduct2">
                         </div>
                     </div>
 
@@ -328,7 +332,7 @@
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" name="imgproduct3">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="imgproduct3">
                         </div>
                     </div>
 
@@ -343,7 +347,7 @@
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" name="imgproduct4">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="imgproduct4">
                         </div>
                     </div>
                     <div class="rowBetween notBetween">
@@ -365,7 +369,7 @@
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" name="imgproduct5">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="imgproduct5">
                         </div>
                     </div>
 
@@ -380,7 +384,7 @@
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" name="imgproduct6">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="imgproduct6">
                         </div>
                     </div>
 
@@ -395,7 +399,7 @@
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" name="imgproduct7">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="imgproduct7">
                         </div>
                     </div>
 
@@ -410,7 +414,7 @@
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" name="imgproduct8">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="imgproduct8">
                         </div>
                     </div>
                 </div>

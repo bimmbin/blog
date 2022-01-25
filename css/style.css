@@ -167,3 +167,158 @@
        padding: 10px;
        height: 50px;
    }
+
+
+
+
+
+
+
+
+
+
+/* articlePage ---------------------*/
+
+.articlePageArt {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.blogShowcaseArt {
+  display: flex;
+  width: 760px;
+  flex-flow: column;
+}
+.blogShowcaseArt img{
+  height: 555px;
+}
+.category {
+  background: #51A8EB;
+  width: fit-content;
+  padding: 3px 10px;
+}
+.headline {
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 2.8rem;
+  margin: 15px 0;
+}
+.andTime {
+  margin-bottom: 5px;
+}
+.author {
+  color: #51A8EB;
+  cursor: pointer;
+}
+.author:hover {
+  text-decoration: underline;
+}
+
+.subheadline {
+  font-size: 27px;
+  font-weight: 600;
+  padding: 20px 0;
+}
+
+pre {
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  line-height: 1.775;
+}
+.dAndTimeArt {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #575757;
+}
+
+
+.subheadproduct {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #addaff;
+  padding: 20px 0;
+}
+.productName {
+  font-weight: 600;
+}
+.productImg {
+  width: 200px;
+  height: 100px!important;
+}
+.productLink {
+  background: #6cbcfa;
+  padding: 15px 25px;
+  border-radius: 50px;
+  border: 1px solid #003c6d;
+}
+.productLink:hover {
+  background: #008cff;
+}
+.sub {
+  border-bottom: 2px solid rgb(172, 172, 172);
+  padding-bottom: 30px;
+}
+
+/* productBelow ---------------------*/
+
+.productBelow {
+  margin-top: 2rem;
+}
+
+
+/* cardwrapped ---------------------*/
+
+.blogRight {
+  display: flex;
+}
+.wrapperArt {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+.flex-containerArt {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 380px;
+  
+}
+.cardArt {
+  background: rgb(255, 255, 255);
+  width: 320px;
+  height: 380px;
+  margin-bottom: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 1px 20px 0 rgb(0 0 0 / 10%);
+  display: flex;
+  flex-flow: column;
+}
+
+.cardArt img {
+  width: 100%;
+  height: 50%;
+}
+.cardArt .blogDetails {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  padding: 15px;
+}
+.cardArt .blogDetails .blogTitle{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+
+
+
