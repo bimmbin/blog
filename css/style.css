@@ -215,10 +215,17 @@
   text-decoration: underline;
 }
 
+.directAns {
+  padding: 20px 0;
+}
+.directAns pre:nth-child(1) {
+  padding-bottom: 20px;
+}
+
 .subheadline {
   font-size: 27px;
   font-weight: 600;
-  padding: 20px 0;
+  padding-bottom: 20px;
 }
 
 pre {

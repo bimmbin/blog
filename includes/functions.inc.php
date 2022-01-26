@@ -209,3 +209,26 @@ function fetch($tableName, $colTarget, $artId){
     $resultsql = mysqli_fetch_assoc($result);
     return $resultsql;
 }
+function fetch3($tableName, $colTarget, $artId, $tgt1, $tgt2){
+    global $conn;
+    $query = "SELECT $tgt1, $tgt2  FROM $tableName WHERE $colTarget = '$artId' AND (NOT $tgt1 = ' ' AND NOT $tgt2 = ' ')";
+
+    $result = mysqli_query($conn, $query);
+
+    $resultsql = mysqli_fetch_assoc($result);
+    return $resultsql;
+}
+function fetchsub($artId, $num){
+    return fetch3('subheadline', 'articleId', $artId, 'headline'.$num, 'pheadline'.$num);
+}
+function fetchsubpro($artId, $num){
+    return fetch3('subheadline', 'articleId', $artId, 'productsubname'.$num, 'productsuburl'.$num);
+}
+function fetchbelowpro($artId, $num){
+    return fetch3('productbelow', 'articleId', $artId, 'productname'.$num, 'producturl'.$num);
+}
+
+
+
+
+
