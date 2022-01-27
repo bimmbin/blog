@@ -161,11 +161,11 @@ if (isset($_POST['submit'])) {
                     )";
                     
                     if (mysqli_query($conn, $sqlBelow)) {
-                        header("location: ../index.php");
+                        header("location: ../posts.php");
                         exit();
                     }
             } else {
-                header("location: ../index.php");
+                header("location: ../posts.php");
                 exit();
             }
 

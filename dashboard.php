@@ -1,6 +1,14 @@
 <?php
-        include "dashHeader.php";
-        include "includes/dashboard.inc.php";
+session_start();
+
+        if (isset($_SESSION['usersname'])) {
+
+
+            include "dashHeader.php";
+            include "includes/dashboard.inc.php";
+
+
+
 ?>
 
 
@@ -441,5 +449,8 @@
 
 
 <?php
+        } else {
+            header("location: index.php");
+        }
         include "dashFooter.php";
 ?>

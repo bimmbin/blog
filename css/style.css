@@ -99,7 +99,8 @@
     height: 55%;
   }
   .titleLink:hover, .authorLink:hover, .showcaseLink:hover {
-    color: #51A8EB;
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
   }
   .authorLink {
     font-weight: 600;
@@ -116,11 +117,12 @@
     display: flex;
     flex-flow: column;
     justify-content: space-between;
-    padding: 15px;
+    padding: 5px 10px 10px 10px;
   }
   .card .blogDetails .blogTitle{
     font-size: 1.2rem;
     font-weight: 500;
+    line-height: 1.6rem;
   }
   .dAndTime {
     display: flex;
@@ -256,8 +258,7 @@ pre {
   font-weight: 600;
 }
 .productImg {
-  width: 200px;
-  height: 100px!important;
+  height: 150px!important;
 }
 .productLink {
   background: #6cbcfa;
@@ -284,6 +285,8 @@ pre {
 
 .blogRight {
   display: flex;
+  margin-bottom: 3rem;
+  padding-bottom: 4rem;
 }
 .wrapperArt {
   width: 100%;
@@ -319,11 +322,17 @@ pre {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  padding: 15px;
+  padding: 5px 10px 10px 10px;
 }
 .cardArt .blogDetails .blogTitle{
   font-size: 1.2rem;
   font-weight: 500;
+  line-height: 1.6rem;
+}
+.dAndTimeArt {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #575757;
 }
 
 

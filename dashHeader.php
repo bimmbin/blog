@@ -18,7 +18,7 @@
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="dashboard.php">Create</a></li>
-            <li><a href="editBlog.php">Edit</a></li>
             <li><a href="posts.php">Your Posts</a></li>
         </ul>
     </header>
+    <div class="subtituteHead"></div>

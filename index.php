@@ -3,7 +3,7 @@
         include "includes/db.inc.php";
         include "includes/functions.inc.php";
 
-        $sqlArt = "SELECT id,imgstatus,headline,author,firstp,  DATE_FORMAT(date , '%M %e, %Y') date  FROM article";
+        $sqlArt = "SELECT id,imgstatus,headline,author,firstp,  DATE_FORMAT(date , '%M %e, %Y') date  FROM article ORDER BY id DESC";
         $resultArt = mysqli_query($conn, $sqlArt);
 
         $articles = mysqli_fetch_all($resultArt, MYSQLI_ASSOC);

@@ -195,8 +195,25 @@ function imglinks($artId){
   $subhead6 = fileName('filesubproduct6', $artId);
   $subhead7 = fileName('filesubproduct7', $artId);
   $subhead8 = fileName('filesubproduct8', $artId);
+
+  $below1 = fileName('imgproduct1', $artId);
+  $below2 = fileName('imgproduct2', $artId);
+  $below3 = fileName('imgproduct3', $artId);
+  $below4 = fileName('imgproduct4', $artId);
+  $below5 = fileName('imgproduct5', $artId);
+  $below6 = fileName('imgproduct6', $artId);
+  $below7 = fileName('imgproduct7', $artId);
+  $below8 = fileName('imgproduct8', $artId);
     
-    $queryImg = "INSERT INTO imglinks (articleId,headline,subhead1,subhead2,subhead3,subhead4,subhead5,subhead6,subhead7,subhead8) VALUES ('$artId','$headline','$subhead1','$subhead2','$subhead3','$subhead4','$subhead5','$subhead6','$subhead7','$subhead8')";
+    $queryImg = "INSERT INTO imglinks (
+        
+        articleId,headline,subhead1,subhead2,subhead3,subhead4,subhead5,subhead6,subhead7,subhead8,below1,below2,below3,below4,below5,below6,below7,below8
+        
+        ) VALUES (
+            
+        '$artId','$headline','$subhead1','$subhead2','$subhead3','$subhead4','$subhead5','$subhead6','$subhead7','$subhead8','$below1','$below2','$below3','$below4','$below5','$below6','$below7','$below8'
+        
+        )";
     mysqli_query($conn, $queryImg);
 }
 
@@ -208,6 +225,15 @@ function fetch($tableName, $colTarget, $artId){
 
     $resultsql = mysqli_fetch_assoc($result);
     return $resultsql;
+}
+function fetchAll($table, $Target, $Id){
+    global $conn;
+    $sqli = "SELECT * FROM $table WHERE $Target = '$Id'";
+
+    $resultsqli = mysqli_query($conn, $sqli);
+
+    $resultsqli = mysqli_fetch_all($resultsqli, MYSQLI_ASSOC);
+    return $resultsqli;
 }
 function fetch3($tableName, $colTarget, $artId, $tgt1, $tgt2){
     global $conn;
