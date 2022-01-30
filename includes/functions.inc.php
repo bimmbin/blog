@@ -254,6 +254,22 @@ function fetchbelowpro($artId, $num){
     return fetch3('productbelow', 'articleId', $artId, 'productname'.$num, 'producturl'.$num);
 }
 
+function emp($arr){
+    
+    if(!empty($arr)) {
+        echo $arr;
+    } 
+
+}
+// function headline($headline){
+
+//     for ($i=1; $i <= 8; $i++) { 
+//         $headline.$i = e($_POST[$headline.$i]);
+// }
+
+// }
+
+
 
 
 

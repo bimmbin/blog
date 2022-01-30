@@ -26,9 +26,15 @@ session_start();
                 $deyt = date('F j, Y', $phdate);
                 ?>
                 <div class="card">
-                    <a href="" class="imgLink">
-                        <img src="uploads/<?php echo $imglink['headline']; ?>" alt="">
-                    </a>
+                    <img class="imgLink" src="uploads/<?php echo $imglink['headline']; ?>" alt="">
+                    <form class="edit" action="edit.php" method="post">
+                        <input type="submit" name="edit" value="">
+                        <input type="hidden" name="editId" value="<?php echo $post['id'] ?>">
+                    </form>
+                    <form class="delete" action="includes/edit.inc.php" method="post">
+                        <input id="delBtn" type="submit" name="delete" value="">
+                        <input type="hidden" name="deleteId" value="<?php echo $post['id']; ?>">
+                    </form>  
                     <div class="blogDetails">
                         <a href="articles.php?headline=<?php echo $post['headline']; ?>" class="titleLink">
                             <p class="blogTitle"><?php echo $post['headline']; ?></p>
@@ -36,7 +42,7 @@ session_start();
                         <div class="dAndTime">
                             <p>By: <a href="" class="authorLink"><?php echo $post['author']; ?></a></p>
                             <p><?php echo $deyt; ?></p>
-                        </div>
+                        </div> 
                     </div>
                 </div>
 

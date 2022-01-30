@@ -66,6 +66,46 @@ header ul li a {
     color: white;
 
 }
+/* #dialog {
+    position: absolute;
+    background: #fff;
+    border: 1px solid black;
+    top: 20vh;
+    left: 30vw;
+    z-index: 10;
+    width: 40rem;
+    height: 300px;
+    padding: 2rem 3rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.281);
+    display: none;
+}
+#dialog ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+}
+#dialog p{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+#dialog ul li{
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-left: 2rem;
+    color: white;
+}
+#dialog ul li:nth-child(1){
+    background: rgb(161, 29, 29);
+}
+#dialog ul li:nth-child(2){
+    background: rgb(110, 153, 109);
+} */
 
 /* ---------- blogSection ------------------*/
 
@@ -206,26 +246,26 @@ input[type=submit]:hover {
 
  /* cardwrapped ---------------------*/
 
- .authorName {
-     margin-top: 1.5rem;
-     font-weight: 500;
- }
-  
- .wrapper {
+.authorName {
+    margin-top: 1.5rem;
+    font-weight: 500;
+}
+
+.wrapper {
     width: 100%;
     max-width: 73.75rem;
     margin: 0 auto;
     margin-top: 3rem;
-  }
-  .flex-container {
+}
+.flex-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     height: 23.75rem;
-    
-  }
-  .card {
+
+}
+.card {
     background: rgb(255, 255, 255);
     width: 22.5rem;
     height: 23.75rem;
@@ -234,45 +274,67 @@ input[type=submit]:hover {
     box-shadow: 0 0.063rem 1.25rem 0 rgb(0 0 0 / 10%);
     display: flex;
     flex-flow: column;
-  }
-  .card a {
-      color: black;
-      text-decoration: none;
-  }
-  
-  .card .imgLink {
+    position: relative;
+}
+.card a {
+    color: black;
+    text-decoration: none;
+}
+
+.card .imgLink {
     height: 55%;
-  }
-  .titleLink:hover, .authorLink:hover {
+}
+.titleLink:hover, .authorLink:hover {
     text-decoration: underline;
     text-decoration-thickness: 0.031rem;
-  }
-  .authorLink {
+}
+.authorLink {
     font-weight: 600;
-  }
-  
-  
-  .card img {
+}
+
+
+.card img {
     width: 100%;
     height: 100%;
-  }
-  .card .blogDetails {
+}
+.card .blogDetails {
     width: 100%;
     height: 45%;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
     padding: 0.313rem 0.625rem 0.625rem 0.625rem;
-  }
-  .card .blogDetails .blogTitle{
+}
+.card .blogDetails .blogTitle{
     font-size: 1.2rem;
     font-weight: 500;
     line-height: 1.6rem;
-  }
-  .dAndTime {
+}
+.dAndTime {
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
     font-weight: 500;
     color: #575757;
-  }
+}
+
+.edit {
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+}
+.delete {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+}
+.edit input[type=submit] {
+    background: url(../img/edit.png) no-repeat center;
+    border: none;
+    width: 45px;
+}
+.delete input[type=submit] {
+    background: url(../img/remove.png) no-repeat center;
+    border: none;
+    width: 45px;
+}

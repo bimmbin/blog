@@ -1,0 +1,81 @@
+function subb($mun){
+    
+    echo " 
+        <div class='subhead head ".$mun."'>
+                    <div class='columnBetween titlePa'>
+                        <p class='bolded'>Subheadline ".$mun."</p>
+                        <textarea name='headline ".$mun."' placeholder='Subheadline Title'> if(!empty($subhead['headline".$mun."'])) { echo $subhead['headline".$mun."']; } ?></textarea>
+                    </div>
+                    <div class='columnBetween titlePa'>
+                        <p>Subheadline Paragraph</p>
+                        <textarea name='pheadline ".$mun."' placeholder='Subheadline Explanation'> if(!empty($subhead['pheadline".$mun."'])) { echo $subhead['pheadline".$mun."']; }?></textarea>
+                    </div>
+                    <h3>Optional</h3>
+                    <div class='rowBetween sub'>
+                        <div class='columnBetween'>
+                            <p>Product Name</p>
+                            <textarea name='productsubname ".$mun."' placeholder='Product Name'> if(!empty($subhead['productsubname".$mun."'])) { echo $subhead['productsubname".$mun."']; }?></textarea>
+                        </div>
+                        <div class='columnBetween'>
+                            <p>Product Url</p>
+                            <textarea name='productsuburl ".$mun."' placeholder='Product Url'> if(!empty($subhead['productsuburl".$mun."'])) { echo $subhead['productsuburl".$mun."']; }?></textarea>
+                        </div>
+                        <div class='columnBetween'>
+                            <p>Product Image</p>
+                            <input type='file' onchange='validateSize(this)' accept='.png, .jpg, .jpeg' name='filesubproduct".$mun."'>
+                        </div>
+                    </div>
+                    <div class='rowBetween notBetween'>
+                        <p>Add more Subheadline</p>
+                        <img src='img/rec.png' alt=' id='subplus ".$mun."'>
+                    </div>
+                </div> ";
+
+}
+
+
+// $headline1 = e($_POST['headline1']);
+    // $headline2 = e($_POST['headline2']);
+    // $headline3 = e($_POST['headline3']);
+    // $headline4 = e($_POST['headline4']);
+    // $headline5 = e($_POST['headline5']);
+    // $headline6 = e($_POST['headline6']);
+    // $headline7 = e($_POST['headline7']);
+    // $headline8 = e($_POST['headline8']);
+
+
+    // $pheadline1 = e($_POST['pheadline1']);
+    // $pheadline2 = e($_POST['pheadline2']);
+    // $pheadline3 = e($_POST['pheadline3']);
+    // $pheadline4 = e($_POST['pheadline4']);
+    // $pheadline5 = e($_POST['pheadline5']);
+    // $pheadline6 = e($_POST['pheadline6']);
+    // $pheadline7 = e($_POST['pheadline7']);
+    // $pheadline8 = e($_POST['pheadline8']);
+
+    // $productsubname1 = e($_POST['productsubname1']);
+    // $productsubname2 = e($_POST['productsubname2']);
+    // $productsubname3 = e($_POST['productsubname3']);
+    // $productsubname4 = e($_POST['productsubname4']);
+    // $productsubname5 = e($_POST['productsubname5']);
+    // $productsubname6 = e($_POST['productsubname6']);
+    // $productsubname7 = e($_POST['productsubname7']);
+    // $productsubname8 = e($_POST['productsubname8']);
+
+    // $productsuburl1 = e($_POST['productsuburl1']);
+    // $productsuburl2 = e($_POST['productsuburl2']);
+    // $productsuburl3 = e($_POST['productsuburl3']);
+    // $productsuburl4 = e($_POST['productsuburl4']);
+    // $productsuburl5 = e($_POST['productsuburl5']);
+    // $productsuburl6 = e($_POST['productsuburl6']);
+    // $productsuburl7 = e($_POST['productsuburl7']);
+    // $productsuburl8 = e($_POST['productsuburl8']);
+
+
+    headline1 = '$headline1', headline2 = '$headline2', headline3 = '$headline3', headline4 = '$headline4', headline5 = '$headline5', headline6 = '$headline6', headline7 = '$headline7', headline8 = '$headline8', 
+
+pheadline1 = '$pheadline1', pheadline2 = '$pheadline2', pheadline3 = '$pheadline3', pheadline4 = '$pheadline4', pheadline5 = '$pheadline5', pheadline6 = '$pheadline6', pheadline7 = '$pheadline7', pheadline8 = '$pheadline8', 
+
+productsubname1 = '$productsubname1', productsubname2 = '$productsubname2', productsubname3 = '$productsubname3', productsubname4 = '$productsubname4', productsubname5 = '$productsubname5', productsubname6 = '$productsubname6', productsubname7 = '$productsubname7', productsubname8 = '$productsubname8', 
+
+productsuburl1 = '$productsuburl1', productsuburl2 = '$productsuburl2', productsuburl3 = '$productsuburl3', productsuburl4 = '$productsuburl4', productsuburl5 = '$productsuburl5', productsuburl6 = '$productsuburl6', productsuburl7 = '$productsuburl7', productsuburl8 = '$productsuburl8', 
