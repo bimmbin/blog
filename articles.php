@@ -23,7 +23,6 @@ include "includes/functions.inc.php";
     $imglink = fetch('imglinks', 'articleId', $artId); // <---- image fetch
 
 
- // print_r($newEmp);
     
     // $newEmp = getEmpBool('productbelow', 'articleId', 'articleId', $artId);
    
