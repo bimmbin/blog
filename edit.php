@@ -14,7 +14,7 @@ if (isset($_POST['edit'])) {
 
     // print_r(array_filter($subhead));
 
-    // print_r($subhead);
+    // print_r($below);
 }
 
 ?>
@@ -30,23 +30,23 @@ if (isset($_POST['edit'])) {
 <!----------------- createBlog1 ------------->
                 <div class="createBlog">
                     <h2 id="cret">Create Blog</h2>
-                    <div class="rowBetween">
-                        <div class="columnBetween">
+                    <div class="rowBetween1">
+                        <div class="columnBetween headline">
                             <p class="bolded">Headline</p>
                             <textarea name="headline" placeholder="Blog Title"><?php echo $articles['headline']; ?></textarea>
                         </div>
-                        <div class="columnBetween">
+                        <div class="columnBetween cat">
                             <p>Category</p>
                             <select class="js-example-basic-single" name="category">
                                 <option value="Gadgets">Gadgets</option>
                                 <option value="Farming">Farming</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="columnBetween">
+                        <div class="columnBetween fayl">
                             <p>Headline Image</p>
                             <input type="file" onchange="validateSizeHead(this)" accept=".png, .jpg, .jpeg" name="fileheadline">
                         </div>
+                    </div>
                 </div>
 
 
@@ -306,11 +306,11 @@ if (isset($_POST['edit'])) {
                     <div class="rowBetween">
                         <div class="columnBetween">
                             <p>Product Name</p>
-                            <textarea name="productname1" placeholder="Product Name"><?php if(!empty($subhead['productname1'])) { echo $below['productname1']; }?></textarea>
+                            <textarea name="productname1" placeholder="Product Name"><?php if(!empty($below['productname1'])) { echo $below['productname1']; }?></textarea>
                         </div>
                         <div class="columnBetween">
                             <p>Product Url</p>
-                            <textarea name="producturl1" placeholder="Product Url"><?php if(!empty($subhead['producturl1'])) { echo $below['producturl1']; }?></textarea>
+                            <textarea name="producturl1" placeholder="Product Url"><?php if(!empty($below['producturl1'])) { echo $below['producturl1']; }?></textarea>
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
@@ -321,11 +321,11 @@ if (isset($_POST['edit'])) {
                     <div class="rowBetween">
                         <div class="columnBetween">
                             <p>Product Name</p>
-                            <textarea name="productname2" placeholder="Product Name"><?php if(!empty($subhead['productname2'])) { echo $below['productname2']; }?></textarea>
+                            <textarea name="productname2" placeholder="Product Name"><?php if(!empty($below['productname2'])) { echo $below['productname2']; }?></textarea>
                         </div>
                         <div class="columnBetween">
                             <p>Product Url</p>
-                            <textarea name="producturl2" placeholder="Product Url"><?php if(!empty($subhead['producturl2'])) { echo $below['producturl2']; }?></textarea>
+                            <textarea name="producturl2" placeholder="Product Url"><?php if(!empty($below['producturl2'])) { echo $below['producturl2']; }?></textarea>
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
@@ -336,11 +336,11 @@ if (isset($_POST['edit'])) {
                     <div class="rowBetween">
                         <div class="columnBetween">
                             <p>Product Name</p>
-                            <textarea name="productname3" placeholder="Product Name"><?php if(!empty($subhead['productname3'])) { echo $below['productname3']; }?></textarea>
+                            <textarea name="productname3" placeholder="Product Name"><?php if(!empty($below['productname3'])) { echo $below['productname3']; }?></textarea>
                         </div>
                         <div class="columnBetween">
                             <p>Product Url</p>
-                             <textarea name="producturl3" placeholder="Product Url"><?php if(!empty($subhead['producturl3'])) { echo $below['producturl3']; }?></textarea>
+                             <textarea name="producturl3" placeholder="Product Url"><?php if(!empty($below['producturl3'])) { echo $below['producturl3']; }?></textarea>
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
@@ -351,11 +351,11 @@ if (isset($_POST['edit'])) {
                     <div class="rowBetween">
                         <div class="columnBetween">
                             <p>Product Name</p>
-                            <textarea name="productname4" placeholder="Product Name"><?php if(!empty($subhead['productname4'])) { echo $below['productname4']; }?></textarea>
+                            <textarea name="productname4" placeholder="Product Name"><?php if(!empty($below['productname4'])) { echo $below['productname4']; }?></textarea>
                         </div>
                         <div class="columnBetween">
                             <p>Product Url</p>
-                            <textarea name="producturl4" placeholder="Product Url"><?php if(!empty($subhead['producturl4'])) { echo $below['producturl4']; }?></textarea>
+                            <textarea name="producturl4" placeholder="Product Url"><?php if(!empty($below['producturl4'])) { echo $below['producturl4']; }?></textarea>
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>

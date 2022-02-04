@@ -15,12 +15,11 @@
 }
 header {
   width: 100%;
-  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #51A8EB;
-  padding: 0 15px;
+  padding: 1.2rem 0.938rem;
 }
 header ul {
   display: flex;
@@ -45,6 +44,15 @@ a {
 }
 .navTog {
   transform: translateX(0%);
+}
+.blackBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.431);
+  display: none;
 }
 
 /* articlePage ---------------------*/
@@ -145,9 +153,15 @@ a {
 .authorLink {
   font-weight: 600;
 }
+.imgLink {
+  height: 60%!important;
+}
+.blogDetails {
+  height: 40%!important;
+}
 
 
-.card img {
+.imgLink img, .imgLink a {
   width: 100%;
   height: 100%;
 }

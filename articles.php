@@ -15,10 +15,67 @@ include "includes/functions.inc.php";
     $phdate = strtotime($topicc['date']);
     $deyt = date('F j, Y', $phdate);
 
+    // echo $artId;
+
     $queryline = "SELECT * FROM imglinks WHERE articleId = '$artId' AND NOT headline = ' '";  
     $resultline = mysqli_query($conn, $queryline); // <---- headline image fetch
     $line = mysqli_fetch_assoc($resultline);
     $imglink = fetch('imglinks', 'articleId', $artId); // <---- image fetch
+
+
+ // print_r($newEmp);
+    
+    // $newEmp = getEmpBool('productbelow', 'articleId', 'articleId', $artId);
+   
+
+    //     var_dump($newEmp);
+    // if ($newEmp !== true) {
+    //     echo "     This var has value";
+    // } else  {
+    //     echo "     This var is empty";
+    // }
+
+    // $upArt1 = getEmpBool('imglinks', 'subhead1', 'articleId', $artId); 
+    // var_dump($upArt1);
+
+
+    // $querylines = "SELECT subhead3 FROM imglinks WHERE articleId = '$artId' AND subhead3 = ' '";  
+    // $resultlines = mysqli_query($conn, $querylines); 
+    // $liness = mysqli_fetch_assoc($resultlines);
+    // if ($liness == NULL) {
+    //     echo "     This var has value";
+    // } else {
+    //     echo "     This var is empty";
+    // }
+    // print_r($liness);
+    // var_dump($liness);
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     $queryAns = "SELECT firstp,directanswer FROM article WHERE id = '$artId'";  

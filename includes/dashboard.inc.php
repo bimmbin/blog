@@ -114,7 +114,7 @@ if (isset($_POST['submit'])) {
                         // fileName('filesubproduct7', $articleId, 'subhead7');
                         // fileName('filesubproduct8', $articleId, 'subhead8');
                     }
-                
+                    
             }
   
                     $productname1 = e($_POST['productname1']);

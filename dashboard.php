@@ -17,7 +17,7 @@ session_start();
 
 
 
-
+<div class="blackBgd"></div>
 
     <section class="blogSection">
         <div class="container">
@@ -26,23 +26,23 @@ session_start();
 <!----------------- createBlog1 ------------->
                 <div class="createBlog">
                     <h2 id="cret">Create Blog</h2>
-                    <div class="rowBetween">
-                        <div class="columnBetween">
+                    <div class="rowBetween1">
+                        <div class="columnBetween headline">
                             <p class="bolded">Headline</p>
                             <textarea name="headline" placeholder="Blog Title"></textarea>
                         </div>
-                        <div class="columnBetween">
+                        <div class="columnBetween cat">
                             <p>Category</p>
                             <select class="js-example-basic-single" name="category">
                                 <option value="Gadgets">Gadgets</option>
                                 <option value="Farming">Farming</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="columnBetween">
+                        <div class="columnBetween fayl">
                             <p>Headline Image</p>
                             <input type="file" onchange="validateSizeHead(this)" accept=".png, .jpg, .jpeg" name="fileheadline">
                         </div>
+                    </div>
                 </div>
 
 

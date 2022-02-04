@@ -29,15 +29,31 @@ $("#belowPlus").click(function(){
 
 $(".img img").click(function(){
   $("nav").toggleClass("navTog")
+  $(".blackBg").fadeToggle('fast')
+});
+$(".blackBg").click(function(){
+  $("nav").toggleClass("navTog")
+  $(".blackBg").fadeToggle('fast')
 });
 
-$(".delete input[type=submit]").click(function(e){
-    if(!confirm('Are you sure you want to delete this article?')){
-        e.preventDefault();
-        return false;
-    }
-    return true;
+$(".imgBurger img").click(function(){
+  $(".topNav ul").toggleClass("togNav")
+  $(".blackBgd").fadeToggle('fast')
 });
+$(".blackBgd").click(function(){
+  $(".topNav ul").toggleClass("togNav")
+  $(".blackBgd").fadeToggle('fast')
+});
+
+
+
+// $(".delete input[type=submit]").click(function(e){
+//     if(!confirm('Are you sure you want to delete this article?')){
+//         e.preventDefault();
+//         return false;
+//     }
+//     return true;
+// });
 
 
 

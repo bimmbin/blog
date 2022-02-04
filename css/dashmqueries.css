@@ -1,0 +1,263 @@
+@media (max-width: 1920px) { 
+    
+    body {
+        background: rgb(135, 227, 255);
+    }
+    .container {
+        width: 96.25rem;
+    }
+    .createBlog h2 {
+        font-size: 1.8rem;
+    }
+    .createBlog p {
+        font-size: 1.5rem;
+    }
+    textarea, select {
+        font-size: 1.2rem;
+        padding: 5px 10px;
+    }
+    .createBlog {
+        height: 25rem;
+    }
+    input[type=file] {
+        font-size: 1.5rem;
+        padding: 0;
+    }
+    .createBlog2 textarea {
+        width: 100%;
+        height: 13.75rem;
+    }
+    .titlePa textarea {
+        width: 100%;
+        height: 13.75rem;
+    }
+    .createBlog2, .createBlog, .subhead {
+        height: fit-content;
+    }
+    .createBlog2 p {
+        font-size: 1.5rem;
+    }
+    .bolded {
+        font-size: 1.5rem;
+    }
+    .columnBetween p {
+        font-size: 1.5rem;
+    }
+    .productsBelow h3, .productsBelow p {
+        font-size: 1.5rem;
+    }
+    .rowBetween1 textarea {
+        width: 100%;
+        height: 6.25rem;
+    }
+    .rowBetween1 select {
+        width: 100%;
+        height: 3rem;
+    }
+    .rowBetween1 .headline {
+        flex: 1 1 100%;
+    }
+    .rowBetween1 .cat {
+        flex: 1 1 50%;
+        padding-right: 3rem;
+    }
+    .rowBetween1 .fayl {
+        flex: 1 1 50%;
+    }
+
+
+}
+@media (max-width: 1670px) { 
+    
+    body {
+        background: rgb(159, 248, 193);
+    }
+    .container {
+        width: 80rem;
+    }
+
+
+   
+
+}
+@media (max-width: 1390px) { 
+    
+    body {
+        background: rgb(159, 248, 193);
+    }
+    .container, .containerPosts {
+        width: 60rem;
+    }
+    .subtituteHead {
+        display: none;
+    }
+    header {
+        display: none;
+    }
+    .blogArticle {
+        flex-flow: column;
+    }
+    .blogSection {
+        width: 100%;
+    }
+    .bgblue {
+        display: block;
+    }
+    input[type=file], .columnBetween p {
+        font-size: 1.2rem;
+    }
+    /* .rowBetween {
+        flex-flow: column;
+    } */
+    .topNav ul {
+        position: fixed;
+        background: #003761;
+        top: 0;
+        left: 0;
+        width: fit-content;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        transform: translateX(-100%);
+        transition: 0.5s;
+        z-index: 10;
+    }
+    .topNav ul li{
+        padding: 1rem 3rem;
+        width: 100%;
+        text-align: center;
+    }
+    .topNav ul li a{
+        font-size: 1.1rem;
+    }
+    .topNav ul li:hover {
+        background: #5ab7ff;
+    }
+    .sub .columnBetween:nth-child(1), .productsBelow .rowBetween .columnBetween:nth-child(1) {
+        flex: 1 1 50%;
+    }
+    .sub .columnBetween:nth-child(2), .productsBelow .rowBetween .columnBetween:nth-child(2) {
+        flex: 1 1 50%;
+        padding: 0 0 0 2rem;
+    }
+    .sub .columnBetween:nth-child(3), .productsBelow .rowBetween .columnBetween:nth-child(3) {
+        flex: 1 1 100%;
+    }
+
+    .rowBetween1 .headline {
+        flex: 1 1 100%;
+    }
+    .rowBetween1 .cat {
+        flex: 1 1 50%;
+        padding-right: 3rem;
+    }
+    .rowBetween1 .fayl {
+        flex: 1 1 50%;
+    }
+    .productsBelow .rowBetween {
+        border-style: solid;
+        border-color: #AFAFAF;
+        border-width: 0 0 1px 0;
+    }
+    /* textarea, select {
+        width: 36rem;
+        height: 8.75rem;
+    }
+    .productsBelow textarea, .sub textarea {
+        height: 8vh;
+        width: 22rem;
+    } */
+    .wrapper {
+        padding: 0 2.5vw;
+    }
+
+}
+
+/* Portrait tablet to landscape and desktop */
+@media  (max-width: 990px) {
+    
+    body {
+        background: rgb(255, 135, 135);
+    }
+    .container, .containerPosts {
+        width: 90%;
+    }
+    input[type=submit] {
+        font-size: 1rem;
+        padding: 0.5rem 0.8rem;
+        border-radius: 10px;
+    }
+    input[type=file], .columnBetween p, textarea, select, .productsBelow p {
+        font-size: 1rem;
+    }
+    .notBetween img {
+        width: 50px;
+        height: 38.89px;
+    }
+    .wrapper {
+        max-width: 100%;
+    }
+    .card {
+        width: 20rem;
+        height: 21.75rem;
+    }
+    /* .columnBetween textarea {
+        width: 100%;
+    } */
+
+
+ }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+    
+    body {
+        background: rgb(249, 172, 251);
+    }
+    .rowBetween1 .cat {
+        padding-right: 1rem;
+    }
+    .card {
+        width: 80%;
+        height: 100%;
+    }
+    .flex-container {
+        justify-content: center;
+    }
+
+    
+ }
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    /* percentage*/
+    body {
+        background: rgb(255, 249, 161);
+    }
+    .sub .columnBetween:nth-child(1), .productsBelow .rowBetween .columnBetween:nth-child(1) {
+        flex: 1 1 100%;
+    }
+    .sub .columnBetween:nth-child(2), .productsBelow .rowBetween .columnBetween:nth-child(2) {
+        flex: 1 1 100%;
+        padding: 0;
+    }
+    .sub .columnBetween:nth-child(3), .productsBelow .rowBetween .columnBetween:nth-child(3) {
+        flex: 1 1 100%;
+    }
+    .rowBetween1 .headline {
+        flex: 1 1 100%;
+    }
+    .rowBetween1 .cat {
+        flex: 1 1 100%;
+        padding-right: 0;
+    }
+    .rowBetween1 .fayl {
+        flex: 1 1 100%;
+    }
+    .card {
+        width: 100%;
+        height: 100%;
+    }
+}

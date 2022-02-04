@@ -79,3 +79,179 @@ pheadline1 = '$pheadline1', pheadline2 = '$pheadline2', pheadline3 = '$pheadline
 productsubname1 = '$productsubname1', productsubname2 = '$productsubname2', productsubname3 = '$productsubname3', productsubname4 = '$productsubname4', productsubname5 = '$productsubname5', productsubname6 = '$productsubname6', productsubname7 = '$productsubname7', productsubname8 = '$productsubname8', 
 
 productsuburl1 = '$productsuburl1', productsuburl2 = '$productsuburl2', productsuburl3 = '$productsuburl3', productsuburl4 = '$productsuburl4', productsuburl5 = '$productsuburl5', productsuburl6 = '$productsuburl6', productsuburl7 = '$productsuburl7', productsuburl8 = '$productsuburl8', 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<div class="container">
+    <div class="authorRecent">
+        <p><?php echo $author; ?>'s Posts</p>
+    </div>
+    <div class="wrapper">
+        <div class="flex-container">
+
+            <?php foreach($articles as $article) {?>
+                <?php 
+                $imgId = $article['id'];
+                $imglink = fetch('imglinks', 'articleId', $imgId);
+                $phdate = strtotime($article['date']);
+                $deyt = date('F j, Y', $phdate);
+                ?>
+                <div class="cardContainer">
+                    <div class="card">
+                        <a href="" class="imgLink">
+                            <img src="uploads/<?php echo $imglink['headline']; ?>" alt="">
+                        </a>
+                        <div class="blogDetails">
+                            <a href="articles.php?headline=<?php echo $article['headline']; ?>" class="titleLink">
+                                <p class="blogTitle"><?php echo $article['headline']; ?></p>
+                            </a>
+                            <div class="dAndTime">
+                                <p>By: <a href="" class="authorLink"><?php echo $article['author']; ?></a></p>
+                                <p><?php echo $deyt; ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+
+        </div>
+    </div>
+</div>
+
+
+function updateArt($tableName, $colEmp, $colVal, $colTarget, $artId, $chkId){
+    global $conn;
+
+    $chk = getEmpBool($tableName, $colEmp, $colTarget, $artId);
+    if ($chk === true) {
+        $query = "UPDATE $tableName SET $colEmp = '$colVal' WHERE $colTarget = '$artId'";
+        mysqli_query($conn, $query);
+    } else if ($chk === false) {
+        $chk1 = getEmpBool($tableName, $chkId, $chkId, $artId);
+        if ($chk1 === true) {
+            $query1 = "UPDATE $tableName SET $colEmp = '$colVal' WHERE $colTarget = '$artId'";
+            mysqli_query($conn, $query1);
+        } else if ($chk1 === false){
+            $queryCreatee = "INSERT INTO $tableName($colEmp) VALUES('$colVal')";
+            $resulta = mysqli_query($conn, $queryCreatee);
+            var_dump($resulta);
+        }
+            
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getEmpBool($tableName, $colEmp, $colTarget, $artId) {
+    global $conn;
+    $keylast;
+    $queryline = "SELECT $colEmp FROM $tableName WHERE $colTarget = '$artId' AND $colEmp = ' '";  
+    $resultline = mysqli_query($conn, $queryline); 
+    $line = mysqli_fetch_assoc($resultline);
+    if ($line == NULL) {
+        $keylast = true;
+    } else {
+        $keylast = false;
+    }
+    return $line;
+}
+
+function checkEmp($var, $colName, $artIds){
+    global $conn;
+    if (!empty($var)) {
+        $query = "UPDATE imglinks SET $colName = '$var' WHERE articleId = '$artIds'";
+        mysqli_query($conn, $query);
+    }
+    
+}
+
+function updateArt($tableName1, $colEmp1, $colVal1, $colTarget1, $artId1, $chkId1){
+    global $conn;
+    $result;
+    $chk = getEmpBool($tableName1, $colEmp1, $colTarget1, $artId1);
+    if ($chk) {
+        // $query = "UPDATE $tableName SET $colEmp = '$colVal' WHERE $colTarget = '$artId'";
+        // mysqli_query($conn, $query);
+        $result = '1';
+    } else {
+        $chk1 = getEmpBool($tableName1, $chkId1, $chkId1, $artId1);
+        if ($chk1) {
+            // $query1 = "UPDATE $tableName SET $colEmp = '$colVal' WHERE $colTarget = '$artId'";
+            // mysqli_query($conn, $query1);
+            $result = '2';
+        } else {
+            // $queryCreatee = "INSERT INTO $tableName(articleId,$colEmp) VALUES('$artId','$colVal')";
+            // $resulta = mysqli_query($conn, $queryCreatee);
+            $result = '3';
+        }
+    }
+    return $result;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+// $upArt = updateArt('productbelow', 'productname1', $productname1, 'articleId', $updateId, 'articleId');
+    // var_dump($upArt);
+
+    // $upArt1 = getEmpBool('subheadline', 'headline1', 'articleId', $updateId); 
+    // var_dump($upArt1);
+
+    
+    // if (array_key_exists('subhead2', $upArt1)) {
+    //     echo "this certain column doesnt have value";
+    // } else {
+    //     echo "this certain column  have value";
+    // }
+    // var_dump($upArt1);
+    // if ($upArt === false) {
+        // $chk1 = getEmpBool('productbelow', 'articleId', 'articleId', $artId);
+        // if ($chk1 === true) {
+        //     $query1 = "UPDATE 'productbelow' SET 'headline1' = '$headline1' WHERE articleId = '$artId'";
+        //     mysqli_query($conn, $query1);
+        // } else if ($chk1 === false){
+        //     $queryCreatee = "INSERT INTO productbelow(headline1) VALUES('$headline1')";
+        //     $resulta = mysqli_query($conn, $queryCreatee);
+        //     var_dump($resulta);
+        // }
+        // echo "it is blank";
+    // }
+    // var_dump($upArt);
+    
+    //     $queryCreatee = "INSERT INTO subheadline(headline1) VALUES('$headline1')";
+    //     $resulta = mysqli_query($conn, $queryCreatee);
+

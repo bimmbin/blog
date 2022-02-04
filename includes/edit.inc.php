@@ -8,8 +8,13 @@ if (isset($_POST['delete'])) {
     $deleteID = $_POST['deleteId'];
 
     $queryDelete = "DELETE FROM article WHERE id = '$deleteID'";
+    $delit = mysqli_query($conn, $queryDelete);
 
-    if(mysqli_query($conn, $queryDelete)) {
+
+    $queryDeleteImg = "DELETE FROM imglinks WHERE articleId = '$deleteID'";
+    $delitPic = mysqli_query($conn, $queryDeleteImg);
+
+    if($delitPic&&$delitPic) {
         header("Location: ../posts.php");
     }
 }
@@ -83,50 +88,88 @@ if(isset($_POST['update'])) {
 
 
 // ----------------------->
+// article Update
 
-    $sqlArtUp =
-    "UPDATE article 
-     SET category = '$category', headline = '$headline', firstp = '$firstp', directanswer = '$directanswer'
-     WHERE id = $updateId ";
-    $artUpdate = mysqli_query($conn, $sqlArtUp);
+    updateArt('article', 'category', $category, 'id', $updateId, 'id');
+    updateArt('article', 'headline', $headline, 'id', $updateId, 'id');
+    updateArt('article', 'firstp', $firstp, 'id', $updateId, 'id');
+    updateArt('article', 'directanswer', $directanswer, 'id', $updateId, 'id');
 
-// ----------------------->
 
-    $sqlSubUp =
-    "UPDATE subheadline 
 
-     SET 
-     headline1 = '$headline1', headline2 = '$headline2', headline3 = '$headline3', headline4 = '$headline4', headline5 = '$headline5', headline6 = '$headline6', headline7 = '$headline7', headline8 = '$headline8', 
+    imglinksUpdate($updateId);
 
-    pheadline1 = '$pheadline1', pheadline2 = '$pheadline2', pheadline3 = '$pheadline3', pheadline4 = '$pheadline4', pheadline5 = '$pheadline5', pheadline6 = '$pheadline6', pheadline7 = '$pheadline7', pheadline8 = '$pheadline8', 
 
-    productsubname1 = '$productsubname1', productsubname2 = '$productsubname2', productsubname3 = '$productsubname3', productsubname4 = '$productsubname4', productsubname5 = '$productsubname5', productsubname6 = '$productsubname6', productsubname7 = '$productsubname7', productsubname8 = '$productsubname8', 
-
-    productsuburl1 = '$productsuburl1', productsuburl2 = '$productsuburl2', productsuburl3 = '$productsuburl3', productsuburl4 = '$productsuburl4', productsuburl5 = '$productsuburl5', productsuburl6 = '$productsuburl6', productsuburl7 = '$productsuburl7', productsuburl8 = '$productsuburl8', 
-
-     WHERE articleId = $updateId ";
-    $subUpdate = mysqli_query($conn, $sqlSubUp);
 
 // ----------------------->
+// subheadline Update
+    updateArt('subheadline', 'headline1', $headline1, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'headline2', $headline2, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'headline3', $headline3, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'headline4', $headline4, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'headline5', $headline5, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'headline6', $headline6, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'headline7', $headline7, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'headline8', $headline8, 'articleId', $updateId, 'articleId');
 
-    $sqlBelUp =
-    "UPDATE productbelow 
+    updateArt('subheadline', 'pheadline1', $pheadline1, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'pheadline2', $pheadline2, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'pheadline3', $pheadline3, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'pheadline4', $pheadline4, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'pheadline5', $pheadline5, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'pheadline6', $pheadline6, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'pheadline7', $pheadline7, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'pheadline8', $pheadline8, 'articleId', $updateId, 'articleId');
 
-    SET 
-    productname1 = '$productname1', productname2 = '$productname2', productname3 = '$productname3', productname4 = '$productname4', productname5 = '$productname5', productname6 = '$productname6', productname7 = '$productname7', productname8 = '$productname8'
+    updateArt('subheadline', 'productsubname1', $productsubname1, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'productsubname2', $productsubname2, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'productsubname3', $productsubname3, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'productsubname4', $productsubname4, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'productsubname5', $productsubname5, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'productsubname6', $productsubname6, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'productsubname7', $productsubname7, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'productsubname8', $productsubname8, 'articleId', $updateId, 'articleId');
 
-    producturl1 = '$producturl1', producturl2 = '$producturl2', producturl3 = '$producturl3', producturl4 = '$producturl4', producturl5 = '$producturl5', producturl6 = '$producturl6', producturl7 = '$producturl7', producturl8 = '$producturl8'
+    updateArt('subheadline', 'productsuburl1', $productsuburl1, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'productsuburl2', $productsuburl2, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'productsuburl3', $productsuburl3, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'productsuburl4', $productsuburl4, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'productsuburl5', $productsuburl5, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'productsuburl6', $productsuburl6, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'productsuburl7', $productsuburl7, 'articleId', $updateId, 'articleId');
+    updateArt('subheadline', 'productsuburl8', $productsuburl8, 'articleId', $updateId, 'articleId');
 
 
-    WHERE articleId = $updateId ";
-    $belUpdate = mysqli_query($conn, $sqlBelUp);
+
+// ----------------------->
+// productbelow Update
+
+ 
+
+
+    updateArt('productbelow', 'productname1', $productname1, 'articleId', $updateId, 'articleId');
+    updateArt('productbelow', 'productname2', $productname2, 'articleId', $updateId, 'articleId');
+    updateArt('productbelow', 'productname3', $productname3, 'articleId', $updateId, 'articleId');
+    updateArt('productbelow', 'productname4', $productname4, 'articleId', $updateId, 'articleId');
+    updateArt('productbelow', 'productname5', $productname5, 'articleId', $updateId, 'articleId');
+    updateArt('productbelow', 'productname6', $productname6, 'articleId', $updateId, 'articleId');
+    updateArt('productbelow', 'productname7', $productname7, 'articleId', $updateId, 'articleId');
+    updateArt('productbelow', 'productname8', $productname8, 'articleId', $updateId, 'articleId');
+
+    updateArt('productbelow', 'producturl1', $producturl1, 'articleId', $updateId, 'articleId');
+    updateArt('productbelow', 'producturl2', $producturl2, 'articleId', $updateId, 'articleId');
+    updateArt('productbelow', 'producturl3', $producturl3, 'articleId', $updateId, 'articleId');
+    updateArt('productbelow', 'producturl4', $producturl4, 'articleId', $updateId, 'articleId');
+    updateArt('productbelow', 'producturl5', $producturl5, 'articleId', $updateId, 'articleId');
+    updateArt('productbelow', 'producturl6', $producturl6, 'articleId', $updateId, 'articleId');
+    updateArt('productbelow', 'producturl7', $producturl7, 'articleId', $updateId, 'articleId');
+    updateArt('productbelow', 'producturl8', $producturl8, 'articleId', $updateId, 'articleId');
+  
 
     $edline = fetch('article', 'id', $updateId);
     $ede = $edline['headline'];
+    header("Location: ../articles.php?headline=$edline[headline]");
 
-    if($artUpdate||$subUpdate||$belUpdate) {
-        header("Location: ../articles.php?headline=$edline[headline]");
-    }
 
 }
 

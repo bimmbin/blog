@@ -12,7 +12,7 @@ session_start();
     $posts = fetchAll('article', 'author', $user);
 
 ?>
-
+<div class="blackBgd"></div>
 
 <div class="containerPosts">
     <h2 class="authorName"><?php echo $user; ?>'s posts</h2>

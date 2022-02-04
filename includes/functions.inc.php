@@ -180,7 +180,9 @@ function fileName($filename, $artId) {
 
 
     if (move_uploaded_file($fileTmpName, $fileDestination)) {
-        return $fileNameNew;
+        if(!empty($fileNameNew)) {
+            return $fileNameNew;
+        } 
     }
 }
 
@@ -216,6 +218,95 @@ function imglinks($artId){
         )";
     mysqli_query($conn, $queryImg);
 }
+
+function getEmpBool($tableName, $colEmp, $colTarget, $artId) {
+    global $conn;
+    $queryline = "SELECT $colEmp FROM $tableName WHERE $colTarget = $artId AND (NOT $colEmp = ' ' AND $colEmp IS NOT NULL)";  
+    $resultline = mysqli_query($conn, $queryline); 
+    $line = mysqli_fetch_assoc($resultline);
+    
+    if ($line == NULL) {
+        $keylast = false;
+    } else if (array_key_exists($colEmp, $line)){
+        $keylast = true;
+    }
+    return  $keylast;
+}
+
+function checkEmp($var, $colName, $artIds){
+    global $conn;
+    if (!empty($var)) {
+        $query = "UPDATE imglinks SET $colName = '$var' WHERE articleId = '$artIds'";
+        mysqli_query($conn, $query);
+    }
+    
+}
+
+function updateArt($tableName, $colEmp, $colVal, $colTarget, $artId, $chkId){
+    global $conn;
+    $result;
+    $chk = getEmpBool($tableName, $colEmp, $colTarget, $artId);
+    if ($chk) {
+        $query = "UPDATE $tableName SET $colEmp = '$colVal' WHERE $colTarget = '$artId'";
+        mysqli_query($conn, $query);
+
+        // $result = 'it has value but needed to update';
+    } else if ($chk === false){
+        $chk1 = getEmpBool($tableName, $chkId, $chkId, $artId);
+        if ($chk1) {
+            $query1 = "UPDATE $tableName SET $colEmp = '$colVal' WHERE $colTarget = '$artId'";
+            mysqli_query($conn, $query1);
+            // $result = 'it has value but kulang';
+        } else {
+            $queryCreatee = "INSERT INTO $tableName(articleId,$colEmp) VALUES('$artId','$colVal')";
+            mysqli_query($conn, $queryCreatee);
+            // $result = 'no value at all';
+        }
+    }
+}
+
+function imglinksUpdate($artIds){
+    global $conn;
+  $headline = fileName('fileheadline', $artIds); 
+  $subhead1 = fileName('filesubproduct1', $artIds);
+  $subhead2 = fileName('filesubproduct2', $artIds);
+  $subhead3 = fileName('filesubproduct3', $artIds);
+  $subhead4 = fileName('filesubproduct4', $artIds);
+  $subhead5 = fileName('filesubproduct5', $artIds);
+  $subhead6 = fileName('filesubproduct6', $artIds);
+  $subhead7 = fileName('filesubproduct7', $artIds);
+  $subhead8 = fileName('filesubproduct8', $artIds);
+
+  $below1 = fileName('imgproduct1', $artIds);
+  $below2 = fileName('imgproduct2', $artIds);
+  $below3 = fileName('imgproduct3', $artIds);
+  $below4 = fileName('imgproduct4', $artIds);
+  $below5 = fileName('imgproduct5', $artIds);
+  $below6 = fileName('imgproduct6', $artIds);
+  $below7 = fileName('imgproduct7', $artIds);
+  $below8 = fileName('imgproduct8', $artIds);
+    
+  checkEmp($headline, 'headline', $artIds);
+  checkEmp($subhead1, 'subhead1', $artIds);
+  checkEmp($subhead2, 'subhead2', $artIds);
+  checkEmp($subhead3, 'subhead3', $artIds);
+  checkEmp($subhead4, 'subhead4', $artIds);
+  checkEmp($subhead5, 'subhead5', $artIds);
+  checkEmp($subhead6, 'subhead6', $artIds);
+  checkEmp($subhead7, 'subhead7', $artIds);
+  checkEmp($subhead8, 'subhead8', $artIds);
+
+  checkEmp($below1, 'below1', $artIds);
+  checkEmp($below2, 'below2', $artIds);
+  checkEmp($below3, 'below3', $artIds);
+  checkEmp($below4, 'below4', $artIds);
+  checkEmp($below5, 'below5', $artIds);
+  checkEmp($below6, 'below6', $artIds);
+  checkEmp($below7, 'below7', $artIds);
+  checkEmp($below8, 'below8', $artIds);
+  
+}
+
 
 function fetch($tableName, $colTarget, $artId){
     global $conn;

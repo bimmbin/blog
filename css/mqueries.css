@@ -54,7 +54,6 @@
         height: 184.2px;
     }
     header {
-        height: 50px;
         justify-content: space-between;
     }
     nav ul {
@@ -67,18 +66,23 @@
         background: #51A8EB;
         top: 0;
         left: 0;
-        width: 70%;
+        width: fit-content;
+        align-items: center;
+        height: 100vh;
         display: flex;
         justify-content: center;
         transform: translateX(-100%);
-        transition: all 0.5s;
+        transition: 0.5s;
+        z-index: 10;
     }
     nav ul li {
-        margin: 1rem 0;
-        padding: 3px 100%;
+        padding: 1rem 3rem;
+        width: 100%;
+        text-align: center;
+        margin: 0;
     }
     nav ul li a{
-        display: block!important;
+        font-size: 1.1rem;
     }
     nav ul li:hover{
         background: #94d1ff;
@@ -101,8 +105,5 @@
     }
     .card {
         height: 100%;
-    }
-    nav {
-        width: 85%;
     }
 }

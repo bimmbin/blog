@@ -34,7 +34,7 @@
                 </a>
                 <div class="showcaseDetails">
                     <p><?php echo $show['date']; ?></p>
-                    <p><a href="">You can take a look here for a longer list of screen sizes and respective media queries. You can take a look here for a longer list of screen sizes and respective </a><p>
+                    <p><a href="">You can take a look here for a longer list of screen sizes and respective media queries. You can take a look here for a longer list of screen sizes and respective </a></p>
                     <p class="lite"><?php echo $show['firstp']; ?></p>
                 </div>
             </div>
@@ -53,9 +53,9 @@
                 ?>
                 <div class="cardContainer">
                     <div class="card">
-                        <a href="" class="imgLink">
+                        <div class="imgLink">
                             <img src="uploads/<?php echo $imglink['headline']; ?>" alt="">
-                        </a>
+                        </div>
                         <div class="blogDetails">
                             <a href="articles.php?headline=<?php echo $article['headline']; ?>" class="titleLink">
                                 <p class="blogTitle"><?php echo $article['headline']; ?></p>
@@ -75,7 +75,7 @@
 
 
 
-
+<div class="blackBg"></div>
 
 
 
