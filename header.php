@@ -7,13 +7,14 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" type="text/css" href="css/style.css?v=1" />
-    <link rel="stylesheet" type="text/css" href="css/mqueries.css?v=1" />
-    <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1" /> -->
+    <link rel="stylesheet" type="text/css" href="css/style.css?v=<? echo time(); ?>" />
+    <link rel="stylesheet" type="text/css" href="css/mqueries.css?v=<? echo time(); ?>" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
     <title>Document</title>
 </head>
 
+
+<div class="blackBg"></div>
 
 <!-- headerpart -->
 

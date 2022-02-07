@@ -29,13 +29,13 @@
         ?>
         <div class="slide">
             <div class="blogShowcase">
-                <a href="" class="showcaseLink">
+                <a href="articles.php?headline=<?php echo $show['headline']; ?>" class="showcaseLink">
                     <img src="uploads/<?php echo $imglink['headline']; ?>" alt="">
                 </a>
                 <div class="showcaseDetails">
                     <p><?php echo $show['date']; ?></p>
-                    <p><a href="">You can take a look here for a longer list of screen sizes and respective media queries. You can take a look here for a longer list of screen sizes and respective </a></p>
-                    <p class="lite"><?php echo $show['firstp']; ?></p>
+                    <p><a href="articles.php?headline=<?php echo $show['headline']; ?>"><?php echo $show['headline']; ?></a></p>
+                    <p class="lite"><a href="articles.php?headline=<?php echo $show['headline']; ?>"><?php echo $show['firstp']; ?></a></p>
                 </div>
             </div>
         </div>
@@ -75,7 +75,6 @@
 
 
 
-<div class="blackBg"></div>
 
 
 

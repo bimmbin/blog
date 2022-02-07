@@ -9,7 +9,12 @@ session_start();
             include "includes/db.inc.php";
             // include "includes/dashboard.inc.php";
 
-    $posts = fetchAll('article', 'author', $user);
+    $sqlArt = "SELECT * FROM article WHERE author = '$user' ORDER BY id DESC";
+    $resultArt = mysqli_query($conn, $sqlArt);
+
+    $posts = mysqli_fetch_all($resultArt, MYSQLI_ASSOC);
+
+    // $posts = fetchAll('article', 'author', $user);
 
 ?>
 <div class="blackBgd"></div>
@@ -26,7 +31,9 @@ session_start();
                 $deyt = date('F j, Y', $phdate);
                 ?>
                 <div class="card">
-                    <img class="imgLink" src="uploads/<?php echo $imglink['headline']; ?>" alt="">
+                    <a href="" class="imgLink">
+                        <img src="uploads/<?php echo $imglink['headline']; ?>" alt="">
+                    </a>
                     <form class="edit" action="edit.php" method="post">
                         <input type="submit" name="edit" value="">
                         <input type="hidden" name="editId" value="<?php echo $post['id'] ?>">

@@ -1,9 +1,9 @@
 /* Large desktop */
-@media (min-width: 991px) and (max-width: 1199px) { 
+@media (max-width: 1199px) { 
     
-    body {
+    /* body {
         background: rgb(255, 135, 135);
-    }
+    } */
     .container {
         width: 990px;
     }
@@ -13,16 +13,37 @@
     .blogShowcase a img {
         height: 380px;
     }
+    .blogShowcaseArt {
+        width: 590px;
+    }
+    .cardArt {
+        width: 280px;
+        height: 330px;
+    }
+    .subheadproduct {
+        flex-flow: column;
+    }
+    .productLink {
+        width: 100%;
+        text-align: center;
+    }
+    .productName {
+        width: 100%;
+        margin: 10px;
+    }
+    .productImg {
+        width: 265px;
+    }
  }
  
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 990px) {
+@media (max-width: 990px) {
     
-    body {
+    /* body {
         background: rgb(176, 255, 168);
-    }
+    } */
     .container {
-        width: 767px;
+        width: 750px;
     }
     .card {
         height: 380px;
@@ -33,14 +54,72 @@
     .blogShowcase a img {
         height: 294.4px;
     }
+    .articlePageArt {
+        flex-flow: column;
+        align-items: center;
+    }
+    .flex-containerArt {
+        flex-wrap: wrap!important;
+        flex-flow: row;
+        justify-content: space-between;
+    }
+    .wrapperArt {
+        width: 750px;
+        height: 100%;
+        max-width: 100%;
+    }
+    .blogShowcaseArt {
+        width: 750px;
+        padding: 1.2rem 0.938rem;
+    }
+    .dAndTimeArt {
+        display: none;
+    }
+    .cardArt {
+        width: 215px;
+        height: 230px;
+        margin-bottom: 1.5rem;
+    }
+    .blogDetailsArt {
+        padding: 10px 5px;
+    }
+    .blogRight {
+        width: 100%;
+    }
+    .cardArt .blogDetailsArt .blogTitle {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.6rem;
+        max-height: 76px;
+        overflow-y: hidden;
+    }
+    .cardArt img {
+        height: 60%;
+    }
+    .blogDetailsArt {
+        height: 40%;
+    }
+    .headline, .showcaseDetails p:nth-child(2)  {
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 2.1rem;
+    }
+    .showcaseDetails .lite {
+        font-weight: 500;
+        font-size: 1rem;
+        color: #373737;
+        width: 100%;
+        height: 80px;
+        overflow: hidden;
+    }
  }
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) { 
     
-    body {
+    /* body {
         background: rgb(249, 172, 251);
-    }
+    } */
     .container {
         width: 480px;
     }
@@ -51,7 +130,7 @@
         width: 100%;
     }
     .blogShowcase a img {
-        height: 184.2px;
+        height: 100%;
     }
     header {
         justify-content: space-between;
@@ -91,19 +170,75 @@
     .img img {
         display: block;
     }
+    .blogShowcaseArt {
+        width: 480px;
+        padding: 1.2rem 0.938rem;
+    }
+    .headline {
+        font-size: 30px;
+        line-height: 2.5rem;
+        margin: 10px 0;
+    }
+    .andTime {
+        font-size: 0.8rem;
+    }
+    .subheadline {
+        font-size: 23.166px;
+        line-height: 2.2rem;
+    }
+    .showcaseDetails {
+        padding: 0;
+    }
     
  }
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
     /* percentage*/
-    body {
+    /* body {
         background: rgb(255, 249, 161);
-    }
+    } */
     .container {
         width: 95%;
     }
     .card {
         height: 100%;
+    }
+    .blogShowcaseArt {
+        width: 100%;
+    }
+    .articlePageArt {
+        padding: 0;
+    }
+    .cardArt {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 1.5rem;
+    }
+    .blogRight {
+        padding: 1.2rem 0.938rem;
+    }
+    .productName {
+        width: 100%;
+        margin: 10px;
+    }
+    .productImg {
+        width: 100%;
+        height: 100%;
+    }
+    .subheadproduct {
+        padding: 15px 20px;
+    }
+    .headline, .showcaseDetails p:nth-child(2)  {
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 2.1rem;
+        margin: 10px 0;
+    }
+    .andTime {
+        font-size: 0.7rem;
+    }
+    .blogTitle {
+        margin-bottom: 5px;
     }
 }

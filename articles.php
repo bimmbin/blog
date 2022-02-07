@@ -6,7 +6,7 @@ include "includes/db.inc.php";
 include "includes/functions.inc.php";
 
 
-    $headline = $_GET['headline'];
+    $headline = mysqli_real_escape_string($conn, $_GET['headline']);
 
     $topicc = fetch('article', 'headline', $headline); // <---- article fetch
 
@@ -345,6 +345,7 @@ include "includes/functions.inc.php";
 
             <!-- CardWrapped -->
             <div class="blogRight">
+                <p>Latest posts</p>
                 <div class="wrapperArt">
                     <div class="flex-containerArt">
                     <?php foreach($articles as $article) {?>
@@ -352,10 +353,9 @@ include "includes/functions.inc.php";
                         $imgId = $article['id'];
                         $imglinke = fetch('imglinks', 'articleId', $imgId);
                         ?>
-                            <p>Latest posts</p>
                             <div class="cardArt">
                                 <img src="uploads/<?php echo $imglinke['headline']; ?>" alt="">
-                                <div class="blogDetails">
+                                <div class="blogDetailsArt">
                                     <a href="articles.php?headline=<?php echo $article['headline']; ?>" class="titleLink">
                                         <p class="blogTitle"><?php echo $article['headline']; ?></p>
                                     </a>

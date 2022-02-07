@@ -71,6 +71,7 @@ a {
 .blogShowcase a img {
   width: 100%;
   height: 460.6px;
+  filter: brightness(80%);
 }
 .showcaseLink {
   flex-grow: 8.5;
@@ -134,7 +135,6 @@ a {
 .cardContainer {
   width: 33.33333%;
   padding: 0 15px;
-  
 }
 .card {
   background: rgb(255, 255, 255);
@@ -144,20 +144,25 @@ a {
   box-shadow: 0 1px 20px 0 rgb(0 0 0 / 10%);
   display: flex;
   flex-flow: column;
+  overflow: hidden;
 }
 
-.titleLink:hover, .authorLink:hover, .showcaseLink:hover {
+.titleLink:hover, .authorLink:hover, .showcaseLink:hover, .showcaseDetails p:nth-child(2):hover {
   text-decoration: underline;
   text-decoration-thickness: 0.5px;
+  cursor: pointer;
 }
 .authorLink {
   font-weight: 600;
 }
 .imgLink {
-  height: 60%!important;
+  height: 60%;
 }
 .blogDetails {
-  height: 40%!important;
+  height: 40%;
+}
+.blogDetailsArt {
+  height: 50%;
 }
 
 
@@ -167,7 +172,7 @@ a {
 }
 .card .blogDetails {
   width: 100%;
-  height: 45%;
+  height: 40%;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -175,7 +180,7 @@ a {
 }
 .card .blogDetails .blogTitle{
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 450;
   line-height: 1.6rem;
 }
 .dAndTime {
@@ -239,15 +244,13 @@ a {
   display: flex;
   justify-content: space-between;
   margin-top: 3rem;
+  padding: 0 0.938rem;
 }
 
 .blogShowcaseArt {
   display: flex;
   width: 760px;
   flex-flow: column;
-}
-.blogShowcaseArt img{
-  height: 555px;
 }
 .category {
   background: #51A8EB;
@@ -304,15 +307,18 @@ pre {
 .subheadproduct {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background: #addaff;
-  padding: 20px 0;
+  padding: 20px 35px;
 }
 .productName {
+  width: 200px;
   font-weight: 600;
+  text-align: center;
 }
 .productImg {
-  height: 150px!important;
+  height: 150px;
+  width: 265px;
 }
 .productLink {
   background: #6cbcfa;
@@ -326,6 +332,10 @@ pre {
 .sub {
   border-bottom: 2px solid rgb(172, 172, 172);
   padding-bottom: 30px;
+  margin-bottom: 20px;
+}
+.sub pre{
+  margin-bottom: 10px;
 }
 
 /* productBelow ---------------------*/
@@ -341,6 +351,7 @@ pre {
   display: flex;
   margin-bottom: 3rem;
   padding-bottom: 4rem;
+  flex-flow: column;
 }
 .wrapperArt {
   width: 100%;
@@ -349,11 +360,8 @@ pre {
 }
 .flex-containerArt {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  height: 380px;
-  
+  flex-flow: column;
 }
 .cardArt {
   background: rgb(255, 255, 255);
@@ -364,24 +372,26 @@ pre {
   box-shadow: 0 1px 20px 0 rgb(0 0 0 / 10%);
   display: flex;
   flex-flow: column;
+  overflow: hidden;
 }
 
 .cardArt img {
   width: 100%;
   height: 50%;
 }
-.cardArt .blogDetails {
+.blogDetails, .blogDetailsArt {
   width: 100%;
-  height: 50%;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
   padding: 5px 10px 10px 10px;
 }
-.cardArt .blogDetails .blogTitle{
+.cardArt .blogDetailsArt .blogTitle{
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.6rem;
+  max-height: 130px;
+  overflow-y: hidden;
 }
 .dAndTimeArt {
   font-size: 0.8rem;
@@ -396,4 +406,6 @@ pre {
   font-size: 1.8rem;
   margin-top: 1.5rem;
   font-weight: 500;
+  padding: 0 0.938rem;
 }
+
