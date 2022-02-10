@@ -352,13 +352,7 @@ function emp($arr){
     } 
 
 }
-// function headline($headline){
 
-//     for ($i=1; $i <= 8; $i++) { 
-//         $headline.$i = e($_POST[$headline.$i]);
-// }
-
-// }
 
 
 

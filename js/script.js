@@ -1,25 +1,25 @@
-$("#subplus1").click(function(){
+$(".subplus1").click(function(){
     $(".head2").slideToggle('100')
 });
-$("#subplus2").click(function(){
+$(".subplus2").click(function(){
   $(".head3").slideToggle('100')
 });
-$("#subplus3").click(function(){
+$(".subplus3").click(function(){
   $(".head4").slideToggle('100')
 });
-$("#subplus4").click(function(){
+$(".subplus4").click(function(){
   $(".head5").slideToggle('100')
 });
-$("#subplus5").click(function(){
+$(".subplus5").click(function(){
   $(".head6").slideToggle('100')
 });
-$("#subplus6").click(function(){
+$(".subplus6").click(function(){
   $(".head7").slideToggle('100')
 });
-$("#subplus7").click(function(){
+$(".subplus7").click(function(){
   $(".head8").slideToggle('100')
 });
-$("#subplus1").click(function(){
+$(".subplus8").click(function(){
   $(".head8").slideToggle('100')
 });
 
@@ -47,13 +47,13 @@ $(".blackBgd").click(function(){
 
 
 
-// $(".delete input[type=submit]").click(function(e){
-//     if(!confirm('Are you sure you want to delete this article?')){
-//         e.preventDefault();
-//         return false;
-//     }
-//     return true;
-// });
+$(".delete input[type=submit]").click(function(e){
+    if(!confirm('Are you sure you want to delete this article?')){
+        e.preventDefault();
+        return false;
+    }
+    return true;
+});
 
 
 

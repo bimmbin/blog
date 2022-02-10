@@ -13,24 +13,24 @@
 
 //bimmbin
 
-// $serverName = "sql113.epizy.com";
-// $UserName = "epiz_31012368";
-// $serverPwd = "cxgh9UNTul7xM";
-// $dbName = "epiz_31012368_blogdata";
-
-// $conn = mysqli_connect($serverName, $UserName, $serverPwd, $dbName);
-
-
-
-
-
-
-$serverName = "localhost";
-$UserName = "root";
-$serverPwd = "";
-$dbName = "blogdata";
+$serverName = "sql113.epizy.com";
+$UserName = "epiz_31012368";
+$serverPwd = "cxgh9UNTul7xM";
+$dbName = "epiz_31012368_blogdata";
 
 $conn = mysqli_connect($serverName, $UserName, $serverPwd, $dbName);
+
+
+
+
+
+
+// $serverName = "localhost";
+// $UserName = "root";
+// $serverPwd = "";
+// $dbName = "blogdata";
+
+// $conn = mysqli_connect($serverName, $UserName, $serverPwd, $dbName);
 
 
 

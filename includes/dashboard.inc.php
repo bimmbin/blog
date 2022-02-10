@@ -1,9 +1,10 @@
 <?php
-require 'db.inc.php';
 
 if (isset($_POST['submit'])) {
     session_start();
+    require 'db.inc.php';
     include_once 'functions.inc.php';
+    
 
     $category = e($_POST['category']);
     $headline = e($_POST['headline']);
@@ -25,7 +26,7 @@ if (isset($_POST['submit'])) {
     }
 
     $queryCreate = "INSERT INTO article(uniqid,category,headline,author,firstp,directanswer) VALUES('$uniqId','$category','$headline','$author','$firstp','$directanswer')";
-    $sqlTrigger = mysqli_query($conn, $queryCreate);
+    $sqlTrigger = mysqli_query($conn, $queryCreate) or die(mysqli_error($conn));
 
     if ($sqlTrigger) {
 
@@ -39,44 +40,13 @@ if (isset($_POST['submit'])) {
                 
                 imglinks($articleId);
                 // fileName('fileheadline', $articleId, 'headline');
-
-                $headline1 = e($_POST['headline1']);
-                $headline2 = e($_POST['headline2']);
-                $headline3 = e($_POST['headline3']);
-                $headline4 = e($_POST['headline4']);
-                $headline5 = e($_POST['headline5']);
-                $headline6 = e($_POST['headline6']);
-                $headline7 = e($_POST['headline7']);
-                $headline8 = e($_POST['headline8']);
-            
-            
-                $pheadline1 = e($_POST['pheadline1']);
-                $pheadline2 = e($_POST['pheadline2']);
-                $pheadline3 = e($_POST['pheadline3']);
-                $pheadline4 = e($_POST['pheadline4']);
-                $pheadline5 = e($_POST['pheadline5']);
-                $pheadline6 = e($_POST['pheadline6']);
-                $pheadline7 = e($_POST['pheadline7']);
-                $pheadline8 = e($_POST['pheadline8']);
-            
-                $productsubname1 = e($_POST['productsubname1']);
-                $productsubname2 = e($_POST['productsubname2']);
-                $productsubname3 = e($_POST['productsubname3']);
-                $productsubname4 = e($_POST['productsubname4']);
-                $productsubname5 = e($_POST['productsubname5']);
-                $productsubname6 = e($_POST['productsubname6']);
-                $productsubname7 = e($_POST['productsubname7']);
-                $productsubname8 = e($_POST['productsubname8']);
-            
-                $productsuburl1 = e($_POST['productsuburl1']);
-                $productsuburl2 = e($_POST['productsuburl2']);
-                $productsuburl3 = e($_POST['productsuburl3']);
-                $productsuburl4 = e($_POST['productsuburl4']);
-                $productsuburl5 = e($_POST['productsuburl5']);
-                $productsuburl6 = e($_POST['productsuburl6']);
-                $productsuburl7 = e($_POST['productsuburl7']);
-                $productsuburl8 = e($_POST['productsuburl8']);
-
+                
+                for ($i=1; $i <= 8; $i++) { 
+                    ${"headline" . $i} = e($_POST['headline'.$i]);
+                    ${"pheadline" . $i} = e($_POST['pheadline'.$i]);
+                    ${"productsubname" . $i} = e($_POST['productsubname'.$i]);
+                    ${"productsuburl" . $i} = e($_POST['productsuburl'.$i]);
+                }
 
                 if (emptyInputSub($headline1, $pheadline1) === false) {
                     
@@ -105,28 +75,15 @@ if (isset($_POST['submit'])) {
                         
                         )";
 
-                        mysqli_query($conn, $sqlSub);
+                        mysqli_query($conn, $sqlSub) or die(mysqli_error($conn));
                         
                         
                 }
     
-                        $productname1 = e($_POST['productname1']);
-                        $productname2 = e($_POST['productname2']);
-                        $productname3 = e($_POST['productname3']);
-                        $productname4 = e($_POST['productname4']);
-                        $productname5 = e($_POST['productname5']);
-                        $productname6 = e($_POST['productname6']);
-                        $productname7 = e($_POST['productname7']);
-                        $productname8 = e($_POST['productname8']);
-                    
-                        $producturl1 = e($_POST['producturl1']);
-                        $producturl2 = e($_POST['producturl2']);
-                        $producturl3 = e($_POST['producturl3']);
-                        $producturl4 = e($_POST['producturl4']);
-                        $producturl5 = e($_POST['producturl5']);
-                        $producturl6 = e($_POST['producturl6']);
-                        $producturl7 = e($_POST['producturl7']);
-                        $producturl8 = e($_POST['producturl8']);
+                for ($i=1; $i <= 8; $i++) { 
+                    ${"productname" . $i} = e($_POST['productname'.$i]);
+                    ${"producturl" . $i} = e($_POST['producturl'.$i]);
+                }
 
                         
                 if (emptyInputPro($productname1, $producturl1) === false) {
@@ -135,9 +92,7 @@ if (isset($_POST['submit'])) {
                     $sqlBelow = "INSERT INTO productbelow(
                         articleId
                         
-                        ,imgproduct1,imgproduct2,imgproduct3,imgproduct4,imgproduct5,imgproduct6,imgproduct7,imgproduct8,  
-                        
-                        productname1,productname2,productname3,productname4,productname5,productname6,productname7,productname8,  
+                        ,productname1,productname2,productname3,productname4,productname5,productname6,productname7,productname8,  
                         
                         producturl1,producturl2,producturl3,producturl4,producturl5,producturl6,producturl7,producturl8
                         
@@ -145,15 +100,13 @@ if (isset($_POST['submit'])) {
                             
                         '$articleId'
 
-                        ,'$imgproduct1','$imgproduct2','$imgproduct3','$imgproduct4','$imgproduct5','$imgproduct6','$imgproduct7','$imgproduct8',
-
-                        '$productname1','$productname2','$productname3','$productname4','$productname5','$productname6','$productname7','$productname8',
+                        ,'$productname1','$productname2','$productname3','$productname4','$productname5','$productname6','$productname7','$productname8',
                         
                         '$producturl1','$producturl2','$producturl3','$producturl4','$producturl5','$producturl6','$producturl7','$producturl8'
                         
                         )";
-                        
-                        if (mysqli_query($conn, $sqlBelow)) {
+                        $neww = mysqli_query($conn, $sqlBelow) or die(mysqli_error($conn));
+                        if ($neww) {
                             header("location: ../posts.php");
                             exit();
                         }
@@ -170,8 +123,6 @@ if (isset($_POST['submit'])) {
     }
    
 
-} else {
-    // header("location: ../dashboard.php");
-}
+} 
 
 ?>

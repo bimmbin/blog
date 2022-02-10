@@ -312,6 +312,9 @@ input[type=submit]:hover {
 .non {
     display: none;
 }
+.head2,.head3,.head4,.head5,.head6,.head7,.head8 {
+    display: none;
+}
 
 
  /* cardwrapped ---------------------*/

@@ -3,12 +3,12 @@
         include "includes/db.inc.php";
         include "includes/functions.inc.php";
 
-        $sqlArt = "SELECT id,imgstatus,headline,author,firstp,  DATE_FORMAT(date , '%M %e, %Y') date  FROM article ORDER BY id DESC";
+        $sqlArt = "SELECT id,headline,author,firstp,  DATE_FORMAT(date , '%M %e, %Y') date  FROM article ORDER BY id DESC";
         $resultArt = mysqli_query($conn, $sqlArt);
 
         $articles = mysqli_fetch_all($resultArt, MYSQLI_ASSOC);
 
-        $sqlShow = "SELECT id,imgstatus,headline,author,firstp,  DATE_FORMAT(date , '%M %e, %Y') date  FROM article ORDER BY id DESC LIMIT 5";
+        $sqlShow = "SELECT id,headline,author,firstp,  DATE_FORMAT(date , '%M %e, %Y') date  FROM article ORDER BY id DESC LIMIT 5";
         $resultShow = mysqli_query($conn, $sqlShow);
 
         $shows = mysqli_fetch_all($resultShow, MYSQLI_ASSOC);
