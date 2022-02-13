@@ -126,6 +126,17 @@
     .blogShowcase {
         flex-flow: column;
     }
+    .showcaseDetails p:nth-child(1) {
+        order: 3;
+      }
+      .showcaseDetails p:nth-child(2) {
+        order: 1;
+        margin: 0!important;
+      }
+      .showcaseDetails .lite {
+        order: 2;
+        margin: 10px 0;
+      }
     .cardContainer {
         width: 100%;
     }
@@ -239,6 +250,9 @@
         font-size: 0.7rem;
     }
     .blogTitle {
-        margin-bottom: 5px;
+        margin-bottom: 8px;
     }
+    .createLink a{
+        font-size: 0.9rem;
+      }
 }

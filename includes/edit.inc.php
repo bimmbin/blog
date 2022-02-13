@@ -7,12 +7,19 @@ require 'functions.inc.php';
 if (isset($_POST['delete'])) {
     $deleteID = $_POST['deleteId'];
 
+    deleteImg('imglinks', 'headline', 'articleId', $deleteID);
+    for ($i=1; $i <= 8; $i++) { 
+        deleteImg('imglinks', 'subhead'.$i, 'articleId', $deleteID);
+        deleteImg('imglinks', 'below'.$i, 'articleId', $deleteID);
+    }
+
     $queryDelete = "DELETE FROM article WHERE id = '$deleteID'";
     $delit = mysqli_query($conn, $queryDelete);
 
 
     $queryDeleteImg = "DELETE FROM imglinks WHERE articleId = '$deleteID'";
     $delitPic = mysqli_query($conn, $queryDeleteImg);
+
 
     if($delitPic&&$delitPic) {
         header("Location: ../posts.php");

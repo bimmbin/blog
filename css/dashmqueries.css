@@ -260,4 +260,7 @@
     .blogTitle {
         margin-bottom: 5px;
     }
+    .createLink a{
+        font-size: 0.9rem;
+    }
 }

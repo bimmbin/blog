@@ -44,7 +44,7 @@ if (isset($_POST['edit'])) {
                         </div>
                         <div class="columnBetween fayl">
                             <p>Headline Image</p>
-                            <input type="file" onchange="validateSizeHead(this)" accept=".png, .jpg, .jpeg" name="fileheadline">
+                            <input type="file" onchange="validateSizeHead(this)" accept=".png, .jpg, .jpeg" name="headline">
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ if (isset($_POST['edit'])) {
                         </div>
                         <div class="columnBetween">
                             <p>Product Image</p>
-                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="filesubproduct<?php echo $i;?>">
+                            <input type="file" onchange="validateSize(this)" accept=".png, .jpg, .jpeg" name="subproduct<?php echo $i;?>">
                         </div>
                     </div>
                     <div class="rowBetween notBetween">

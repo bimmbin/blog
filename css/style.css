@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
+
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +10,26 @@
   width: 75rem;
   margin: auto;
 }
-
+.centered {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 10vh;
+}
+.noPost {
+  text-align: center;
+}
+.createLink a{
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  background: #51A8EB;
+  padding: 8px 18px;
+  border-radius: 5px;
+}
+.createLink {
+  margin-top: 10px;
+  text-align: center;
+}
 /* header ---------------------*/
 .head {
   background: #51A8EB;
@@ -53,6 +74,7 @@ a {
   height: 100%;
   background: rgba(0, 0, 0, 0.431);
   display: none;
+  z-index: 5;
 }
 
 /* articlePage ---------------------*/
@@ -71,7 +93,6 @@ a {
 .blogShowcase a img {
   width: 100%;
   height: 460.6px;
-  filter: brightness(80%);
 }
 .showcaseLink {
   flex-grow: 8.5;
@@ -100,6 +121,7 @@ a {
 .showcaseDetails .lite {
   font-weight: 500;
   font-size: 1.2rem;
+  line-height: 1.75rem;
   color: #373737;
   width: 100%;
   height: 90px;

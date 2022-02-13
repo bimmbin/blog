@@ -22,7 +22,7 @@
     <div class="container">
         <header>
             <div class="logo">
-                <h2><a href="index.php">TheBlogLogoNew</a></h2>
+                <h2><a href="index.php">TheBlogLogo</a></h2>
             </div>
             <div class="img">
                 <img src="img/burger.png" alt="">

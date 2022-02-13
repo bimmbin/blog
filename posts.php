@@ -22,6 +22,12 @@ session_start();
 <div class="containerPosts">
     <h2 class="authorName"><?php echo $user; ?>'s posts</h2>
     <div class="wrapper">
+    <?php if (empty($posts)) { ?>
+            <div class="centered">
+                <h2 class="noPost">You haven't posts anything yet</h2>
+                <p class="createLink"><a href="dashboard.php">Click here to Create</a></p>
+            </div>
+        <?php } ?>
         <div class="flex-container">
             <?php foreach($posts as $post) {?>
                 <?php 

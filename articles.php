@@ -56,7 +56,7 @@ include "includes/functions.inc.php";
             <?php if ($topicc) { ?>
                 <p class="category"><?php echo $topicc['category']; ?></p>
                 <p class="headline"><?php echo $topicc['headline']; ?></p>
-                <p class="andTime">By: <span class="author"><?php echo $topicc['author']; ?></span> | <?php echo $deyt; ?></p>
+                <p class="andTime">By: <a href="author.php?author=<?php echo $topicc['author']; ?>" class="author"><?php echo $topicc['author']; ?></a> | <?php echo $deyt; ?></p>
                 <?php if ($line) { ?>  <img src="uploads/<?php echo $line['headline']; ?>" alt=""> <?php } ?>
             <?php } ?>
                 <!-- subheadline -->

@@ -189,23 +189,12 @@ function fileName($filename, $artId) {
 function imglinks($artId){
     global $conn;
   $headline = fileName('fileheadline', $artId); 
-  $subhead1 = fileName('filesubproduct1', $artId);
-  $subhead2 = fileName('filesubproduct2', $artId);
-  $subhead3 = fileName('filesubproduct3', $artId);
-  $subhead4 = fileName('filesubproduct4', $artId);
-  $subhead5 = fileName('filesubproduct5', $artId);
-  $subhead6 = fileName('filesubproduct6', $artId);
-  $subhead7 = fileName('filesubproduct7', $artId);
-  $subhead8 = fileName('filesubproduct8', $artId);
 
-  $below1 = fileName('imgproduct1', $artId);
-  $below2 = fileName('imgproduct2', $artId);
-  $below3 = fileName('imgproduct3', $artId);
-  $below4 = fileName('imgproduct4', $artId);
-  $below5 = fileName('imgproduct5', $artId);
-  $below6 = fileName('imgproduct6', $artId);
-  $below7 = fileName('imgproduct7', $artId);
-  $below8 = fileName('imgproduct8', $artId);
+  for ($i=1; $i <= 8; $i++) { 
+    ${"subhead" . $i} = fileName('filesubproduct'.$i, $artId); 
+    ${"below" . $i} = fileName('imgproduct'.$i, $artId);
+}
+
     
     $queryImg = "INSERT INTO imglinks (
         
@@ -222,7 +211,7 @@ function imglinks($artId){
 function getEmpBool($tableName, $colEmp, $colTarget, $artId) {
     global $conn;
     $queryline = "SELECT $colEmp FROM $tableName WHERE $colTarget = $artId AND (NOT $colEmp = ' ' AND $colEmp IS NOT NULL)";  
-    $resultline = mysqli_query($conn, $queryline); 
+    $resultline = mysqli_query($conn, $queryline) or die(mysqli_error($conn));
     $line = mysqli_fetch_assoc($resultline);
     
     if ($line == NULL) {
@@ -236,6 +225,10 @@ function getEmpBool($tableName, $colEmp, $colTarget, $artId) {
 function checkEmp($var, $colName, $artIds){
     global $conn;
     if (!empty($var)) {
+        $imgDel = fetch('imglinks', 'articleId', $artIds);
+        $path = "../uploads/".$imgDel[$colName];
+        unlink($path);
+
         $query = "UPDATE imglinks SET $colName = '$var' WHERE articleId = '$artIds'";
         mysqli_query($conn, $query);
     }
@@ -265,45 +258,32 @@ function updateArt($tableName, $colEmp, $colVal, $colTarget, $artId, $chkId){
     }
 }
 
+function deleteImg($tableName, $colEmp, $colTarget, $artId){
+    global $conn;
+    $result;
+    $chk = getEmpBool($tableName, $colEmp, $colTarget, $artId);
+    if ($chk) {
+        $imgDel = fetch($tableName, $colTarget, $artId);
+        $path = "../uploads/".$imgDel[$colEmp];
+        unlink($path);
+    } 
+}
+
 function imglinksUpdate($artIds){
     global $conn;
-  $headline = fileName('fileheadline', $artIds); 
-  $subhead1 = fileName('filesubproduct1', $artIds);
-  $subhead2 = fileName('filesubproduct2', $artIds);
-  $subhead3 = fileName('filesubproduct3', $artIds);
-  $subhead4 = fileName('filesubproduct4', $artIds);
-  $subhead5 = fileName('filesubproduct5', $artIds);
-  $subhead6 = fileName('filesubproduct6', $artIds);
-  $subhead7 = fileName('filesubproduct7', $artIds);
-  $subhead8 = fileName('filesubproduct8', $artIds);
 
-  $below1 = fileName('imgproduct1', $artIds);
-  $below2 = fileName('imgproduct2', $artIds);
-  $below3 = fileName('imgproduct3', $artIds);
-  $below4 = fileName('imgproduct4', $artIds);
-  $below5 = fileName('imgproduct5', $artIds);
-  $below6 = fileName('imgproduct6', $artIds);
-  $below7 = fileName('imgproduct7', $artIds);
-  $below8 = fileName('imgproduct8', $artIds);
-    
-  checkEmp($headline, 'headline', $artIds);
-  checkEmp($subhead1, 'subhead1', $artIds);
-  checkEmp($subhead2, 'subhead2', $artIds);
-  checkEmp($subhead3, 'subhead3', $artIds);
-  checkEmp($subhead4, 'subhead4', $artIds);
-  checkEmp($subhead5, 'subhead5', $artIds);
-  checkEmp($subhead6, 'subhead6', $artIds);
-  checkEmp($subhead7, 'subhead7', $artIds);
-  checkEmp($subhead8, 'subhead8', $artIds);
+    $headline = fileName('headline', $artIds); 
+    for ($i=1; $i <= 8; $i++) { 
+        ${"subhead" . $i} = fileName('subproduct'.$i, $artIds); 
+        ${"below" . $i} = fileName('imgproduct'.$i, $artIds);
+    }
 
-  checkEmp($below1, 'below1', $artIds);
-  checkEmp($below2, 'below2', $artIds);
-  checkEmp($below3, 'below3', $artIds);
-  checkEmp($below4, 'below4', $artIds);
-  checkEmp($below5, 'below5', $artIds);
-  checkEmp($below6, 'below6', $artIds);
-  checkEmp($below7, 'below7', $artIds);
-  checkEmp($below8, 'below8', $artIds);
+    checkEmp($headline, 'headline', $artIds);
+    for ($i=1; $i <= 8; $i++) { 
+        checkEmp(${"subhead" . $i}, 'subhead'.$i, $artIds);
+        checkEmp(${"below" . $i}, 'below'.$i, $artIds);
+    }
+
   
 }
 
@@ -325,6 +305,13 @@ function fetchAll($table, $Target, $Id){
 
     $resultsqli = mysqli_fetch_all($resultsqli, MYSQLI_ASSOC);
     return $resultsqli;
+}
+function fetchNotnull($tableName, $colTarget, $artId, $tgt1){
+    global $conn;
+    $query = "SELECT $tgt1, $tgt2  FROM $tableName WHERE $colTarget = '$artId' AND NOT $tgt1 = ' '";
+    $result = mysqli_query($conn, $query);
+    $resultsql = mysqli_fetch_assoc($result);
+    return $resultsql;
 }
 function fetch3($tableName, $colTarget, $artId, $tgt1, $tgt2){
     global $conn;

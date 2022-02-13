@@ -22,6 +22,13 @@
 
  <!-- Section -->
  <div class="container">
+ <?php if (isset($_SESSION['usersname'])) {
+     if (empty($articles)) { ?>
+            <div class="centered">
+                <h2 class="noPost">No articles found</h2>
+                <p class="createLink"><a href="dashboard.php">Click here to Create</a></p>
+            </div>
+        <?php } } ?>
     <?php foreach($shows as $show) {?>
         <?php 
         $imgId = $show['id'];
